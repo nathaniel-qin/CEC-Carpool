@@ -13,6 +13,16 @@
   src: url("Oxygen/Oxygen-Light.ttf");
 }
 
+h1 {
+  font-size: 3vw;
+  color: white;
+}
+
+h2 {
+  font-size: 2vw;
+  color: white;
+}
+
 .bold {
   font-family: Bold;
 }
@@ -27,4 +37,9 @@
 
 .centered {
   text-align: center;
+}
+
+#background-img {
+  background: url("background.png") no-repeat center top fixed;
+  background-size: cover;
 }
