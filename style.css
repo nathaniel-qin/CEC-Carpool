@@ -57,6 +57,28 @@ h2 {
   }
 }
 
+h3 {
+  color: white;
+}
+
+@media screen and (max-width: 767px) {
+  h3 {
+    font-size: 6vw;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h3 {
+    font-size: 4.25vw;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  h3 {
+    font-size: 3vw;
+  }
+}
+
 .bold {
   font-family: Bold;
 }
@@ -75,8 +97,19 @@ h2 {
   margin-right: auto;
 }
 
-.padded {
-  padding: 2%;
+.padded-big {
+  padding: 5%;
+}
+
+.padded-small {
+  padding: 1%;
+}
+
+.my-button{
+  background: rgba(255, 255, 255, 0.8);
+  padding-left: 5%;
+  padding-right: 5%;
+  border: none;
 }
 
 #background-img {
