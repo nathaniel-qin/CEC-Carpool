@@ -13,7 +13,18 @@
   src: url("Oxygen/Oxygen-Light.ttf");
 }
 
-#main {
+.bold {
   font-family: Bold;
+}
+
+.regular {
+  font-family: Regular;
+}
+
+.light {
+  font-family: Light;
+}
+
+.centered {
   text-align: center;
 }
