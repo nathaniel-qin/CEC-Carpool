@@ -75,14 +75,14 @@ h2 {
 
 @media screen and (max-width: 767px) {
     #header-img{
-    	background: url("life_narrow.png") no-repeat center top;
+    	background: url("life_narrow.png") no-repeat center;
       background-size: contain;
     }
 }
 
 @media screen and (min-width: 768px) {
     #header-img{
-    	background: url("life_wide.png") no-repeat center top;
+    	background: url("life_wide.png") no-repeat center;
       background-size: contain;
     }
 }
