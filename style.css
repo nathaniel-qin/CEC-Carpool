@@ -14,13 +14,35 @@
 }
 
 h1 {
-  font-size: 4vw;
   color: white;
 }
 
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 10vw;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 4vw;
+  }
+}
+
 h2 {
-  font-size: 2.5vw;
   color: white;
+}
+
+@media screen and (max-width: 767px) {
+  h2 {
+    font-size: 5vw;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 2.5vw;
+  }
 }
 
 .bold {
@@ -45,7 +67,22 @@ h2 {
 }
 
 #header-img {
+  height: 10em;
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+
+@media screen and (max-width: 767px) {
+    #header-img{
+    	background: url("life_narrow.png") no-repeat center top;
+      background-size: contain;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #header-img{
+    	background: url("life_wide.png") no-repeat center top;
+      background-size: contain;
+    }
 }
