@@ -75,8 +75,8 @@ h2 {
   margin-right: auto;
 }
 
-.white {
-  background-color: white;
+.padded {
+  padding: 2%;
 }
 
 #background-img {
