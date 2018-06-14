@@ -73,7 +73,10 @@ h2 {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  display: block;
+}
+
+.white {
+  background-color: white;
 }
 
 #background-img {
@@ -100,7 +103,7 @@ h2 {
 }
 
 #car-gif {
-  height: 25em;
-  background: url("car.gif") no-repeat center;
-  background-size: contain;
+  height: 15em;
+  background: white url("car.gif") no-repeat center;
+  background-size: auto;
 }
