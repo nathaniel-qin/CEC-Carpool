@@ -14,12 +14,12 @@
 }
 
 h1 {
-  font-size: 5vw;
+  font-size: 4vw;
   color: white;
 }
 
 h2 {
-  font-size: 2.8vw;
+  font-size: 2.5vw;
   color: white;
 }
 
@@ -42,4 +42,10 @@ h2 {
 #background-img {
   background: url("background.png") no-repeat center top fixed;
   background-size: cover;
+}
+
+#header-img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
