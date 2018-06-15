@@ -200,10 +200,6 @@ h4 {
 }
 
 .form-box:focus {
-  transform: translateY(1px);
-  border: none;
-  border-top: 1px solid white;
-  border-bottom: 2px solid #5F84D8;
   outline: none;
   box-shadow: 1px 0px 5px gray;
 }
@@ -254,4 +250,9 @@ h4 {
   height: 15em;
   background: white url("Media/car.gif") no-repeat center;
   background-size: auto;
+}
+
+#reminder {
+  margin-top: -2%;
+  padding-bottom: 5%;
 }
