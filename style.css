@@ -136,6 +136,24 @@ h4 {
   padding-right: 5%;
   border: none;
   box-shadow: 0px 3px 10px rgb(100, 100, 100);
+  border-radius: 5px;
+  border-bottom: 3px solid gray;
+}
+
+.my-button:hover {
+  background-color: white;
+  box-shadow: 0px 3px 10px rgb(80, 80, 80);
+}
+
+.my-button:active {
+  box-shadow: none;
+  transform: translateY(2px);
+  border-top: 1px solid white;
+  border-bottom: 2px solid gray;
+}
+
+.my-button:focus {
+  outline: 0;
 }
 
 @media screen and (max-width: 575px) {
@@ -160,6 +178,35 @@ h4 {
   .my-button {
     padding-top: 1%;
   }
+}
+
+.puzzle {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding-left: 10%;
+}
+
+.indented {
+  text-indent: 5%;
+}
+
+.form-box {
+  font-family: Light;
+  font-size: 2vw;
+  margin-top: -1.5%;
+  border: none;
+  border-bottom: 3px solid #5F84D8;
+  padding: -5%;
+  height: 50px;
+  width: 80%;
+}
+
+.form-box:focus {
+  transform: translateY(1px);
+  border: none;
+  border-top: 1px solid white;
+  border-bottom: 2px solid #5F84D8;
+  outline: none;
+  box-shadow: 1px 0px 5px gray;
 }
 
 #background-img {
