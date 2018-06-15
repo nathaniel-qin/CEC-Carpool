@@ -20,20 +20,32 @@
       <h2 class="regular centered">I'm gonna keep things easy for now.</h2>
     </div>
     <div class="container-fluid padded-big puzzle">
-      <h3 class="bold" style="color: black;">Decode this message:</h3>
-      <h2 class="light indented" style="color: black;">here's the puzzle</blockquote</h2>
+      <h3 class="bold" style="color: black;">Decode this message and answer it:</h3>
+      <h2 class="light indented" style="color: black;">23080120 1215030120091514 0919 02152008 200805 19052020091407 1506 08090708 190308151512 13211909030112 011404 1325 02091820081612010305?</blockquote></h2>
     </div>
     <div class="container-fluid padded-big">
-      <h2 class="bold centered">Enter your guess below:</h4><br>
-      <input type="text" class="form-box centered"><br>
-      <input type="submit" class="my-button centered" style="margin-bottom: 5%;" value="Did you get it?" onclick="checkAnswer()">
+      <form name="guess-form" method="post" autocomplete="off">
+        <h2 class="bold centered">Enter your guess below:</h4><br>
+        <input type="text" name="guess" class="form-box centered"><br>
+        <input type="submit" class="my-button centered" style="margin-bottom: 5%;" value="Did you get it?">
+      </form>
     </div>
   </div>
 </body>
 </html>
 
 <script>
-
-function checkAnswer() {
-  if()
-}
+$("form").submit(function(e) {
+  var guess = JSON.stringify($("form").serialize()).substr(7);
+  guess = guess.substr(0, guess.length - 1);
+  guess = guess.replace(/%20/g, " ");
+  guess = guess.toLowerCase();
+  console.log(guess);
+  if(guess === "albuquerque") {
+    alert("Nice job :)");
+  } else {
+    alert("Try again :)");
+  }
+  e.preventDefault();
+});
+</script>
