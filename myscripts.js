@@ -2,9 +2,9 @@ function alertEmpty() {
   alert("You have to actually type something...");
 }
 
-function toSuccess() {
+function toSuccess(number) {
   alert("Wowzers!");
-  window.location.href = "../success.html";
+  window.location.href = "../Successes/success" + number + ".html";
 }
 
 function alertWrong() {
@@ -49,7 +49,7 @@ function checkAnswer1(guess) {
   if(guess === "") {
     alertEmpty();
   } else if(guess === "albuquerque") {
-    toSuccess();
+    toSuccess(1);
   } else {
     alertWrong();
   }
@@ -59,7 +59,7 @@ function checkAnswer2(guess) {
   if(guess === "") {
     alertEmpty();
   } else if(guess === "pineapple belongs on pizza" || guess === "pineapplebelongsonpizza") {
-    toSuccess();
+    toSuccess(2);
   } else {
     alertWrong();
   }
