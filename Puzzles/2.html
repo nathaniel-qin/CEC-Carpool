@@ -24,11 +24,10 @@
     <div class="container-fluid padded-big puzzle">
       <h3 class="bold" style="color: black;">Decode this message:</h3>
       <h2 class="light indented" style="color: black;">pinch - cohort + ear - row + purples - your + belt + pong - trap + out - shut + input - irk - hut + frizz + act - fructose.</blockquote></h2>
-      <br>
       <div id="hint" style="display:none;" class="container-fluid centered">
-        <h2 class="regular" class="centered" style="color: black";>chill - recall = <span class="bold">hi</span></h2>
+        <h2 class="regular" style="color: red";>chill - recall = <span class="bold">hi</span></h2>
       </div>
-      <input id="hintButton" type="button" class="centered my-button" name="hint" value="Give me a hint" onclick="showHint()" />
+      <input id="hint-button" type="button" class="my-button" value="Give me a hint" onclick="showHint()" />
     </div>
     <div class="container-fluid padded-big">
       <h2 class="bold centered">Enter your guess below:</h2><br>
@@ -46,7 +45,7 @@ function getGuess() {
 
 function showHint() {
    document.getElementById("hint").style.display = "block";
-   document.getElementById("hintButton").style.display = "none";
+   document.getElementById("hint-button").style.display = "none";
 }
 
 $("#guess").keyup(function(e) {

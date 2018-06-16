@@ -185,6 +185,8 @@ h4 {
 .puzzle {
   background-color: rgba(255, 255, 255, 0.4);
   padding-left: 10%;
+  padding-right: 10%;
+  display: block;
 }
 
 .indented {
@@ -268,4 +270,15 @@ h4 {
 #reminder {
   margin-top: -2%;
   padding-bottom: 5%;
+}
+
+#hint {
+  padding-top: 5%;
+}
+
+#hint-button {
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
