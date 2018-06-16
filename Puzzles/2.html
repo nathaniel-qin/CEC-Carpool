@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-  <title>Carpool - Puzzle #1</title>
+  <title>Carpool - Puzzle #2</title>
   <meta charset="utf-8">
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,12 +18,17 @@
   <div class="container centered" onclick="window.location.href='../index.html';" id="header-img"></div>
   <div id="background-img">
     <div class="container-fluid padded-big">
-      <h1 class="regular centered">Welcome to the very first puzzle!</h1>
-      <h2 class="regular centered">I'm gonna keep things easy for now.</h2>
+      <h1 class="regular centered">Welcome to the second puzzle!</h1>
+      <h2 class="regular centered">Things will start getting harder now (:</h2>
     </div>
     <div class="container-fluid padded-big puzzle">
-      <h3 class="bold" style="color: black;">Decode this message and answer it:</h3>
-      <h2 class="light indented" style="color: black;">23080120 1215030120091514 0919 02152008 200805 19052020091407 1506 08090708 190308151512 13211909030112 011404 1325 02091820081612010305?</blockquote></h2>
+      <h3 class="bold" style="color: black;">Decode this message:</h3>
+      <h2 class="light indented" style="color: black;">pinch - cohort + ear - row + purples - your + belt + pong - trap + out - shut + input - irk - hut + frizz + act - fructose.</blockquote></h2>
+      <br>
+      <div id="hint" style="display:none;" class="container-fluid centered">
+        <h2 class="regular" class="centered" style="color: black";>chill - recall = <span class="bold">hi</span></h2>
+      </div>
+      <input id="hintButton" type="button" class="centered my-button" name="hint" value="Give me a hint" onclick="showHint()" />
     </div>
     <div class="container-fluid padded-big">
       <h2 class="bold centered">Enter your guess below:</h2><br>
@@ -31,14 +36,18 @@
       <input type="button" class="my-button centered" onclick="getGuess()" value="Did you get it?">
     </div>
   </div>
-</body>
 </html>
 
 <script>
 function getGuess() {
   var guess = document.getElementById("guess").value.toLowerCase();
-  checkAnswer1(guess);
+  checkAnswer2(guess);
 };
+
+function showHint() {
+   document.getElementById("hint").style.display = "block";
+   document.getElementById("hintButton").style.display = "none";
+}
 
 $("#guess").keyup(function(e) {
   if(e.keyCode === 13) {
