@@ -1,6 +1,10 @@
+function alertEmpty() {
+  alert("You have to actually type something...");
+}
+
 function toSuccess() {
-  alert("Wowzers!")
-  window.location.href = "../success.html"
+  alert("Wowzers!");
+  window.location.href = "../success.html";
 }
 
 function alertWrong() {
@@ -42,7 +46,9 @@ function alertWrong() {
 }
 
 function checkAnswer1(guess) {
-  if(guess === "albuquerque") {
+  if(guess === "") {
+    alertEmpty();
+  } else if(guess === "albuquerque") {
     toSuccess();
   } else {
     alertWrong();
@@ -50,7 +56,9 @@ function checkAnswer1(guess) {
 }
 
 function checkAnswer2(guess) {
-  if(guess === "pineapple belongs on pizza" || guess === "pineapplebelongsonpizza") {
+  if(guess === "") {
+    alertEmpty();
+  } else if(guess === "pineapple belongs on pizza" || guess === "pineapplebelongsonpizza") {
     toSuccess();
   } else {
     alertWrong();
