@@ -1,5 +1,5 @@
 function toSuccess() {
-  alert("uh.....")
+  alert("Wowzers!")
   window.location.href = "../success.html"
 }
 
