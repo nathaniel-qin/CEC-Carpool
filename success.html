@@ -17,32 +17,35 @@
   <div class="container centered" style="cursor: default" onclick="window.location.href='index.html';" id="header-img"></div>
   <div id="background-img">
     <div class="container-fluid padded-big">
-      <h1 class="bold centered">Welcome to CEC-Life Carpool</h1>
-      <h2 class="light centered">My name is Nathaniel Qin, your 2018-2019 carpool admiral (:</h2>
+      <h1 class="bold centered">Congrats!</h1>
+      <h2 class="light centered">You did it (:</h2>
     </div>
-    <div class="container-fluid" id="car-gif"></div>
+    <div class="container-fluid" id="yay-gif"></div>
     <div class="container-fluid padded-big">
-      <h3 class="regular centered">Every week, I will have a short and (hopefully) fun puzzle for you guys to solve.</h3>
-      <h2 class="light centered">Make sure to comment on the Facebook post first for rides, and then you can try attempting the puzzle!</h2>
+      <h1 class="bold centered"><em>Don't forget to comment for a ride!</em></h1>
     </div>
-    <div class="row centered padded-small">
-      <div>
-        <button type="button" class="my-button centered" id="new-puzzle">
-          <h4 class="light">Take me to this week's puzzle</h4>
-        </button>
-      </div>
-      <div>
-        <button type="button" class="my-button centered" id="archives" style="margin-bottom: 10%;">
-          <h4 class="light">I want to see the old puzzles</h4>
-        </button>
-      </div>
+    <div class="container-fluid padded-big">
+      <h2 class="bold centered">Enter your name for the leaderboard:</h2><br>
+      <input type="text" name="name" class="form-box centered" id="name" autocomplete="off"><br>
+      <input type="button" class="my-button centered" onclick="addName()" value="Submit">
     </div>
   </div>
 </body>
 </html>
 
 <script>
-$("#new-puzzle").click(function() {
-  window.location.href = "Puzzles/1.html";
+function addName() {
+  var name = document.getElementById("name").value;
+  const fs = require("fs");
+
+  fs.appendFile("scores.txt", name, function(err) {
+    if(err) throw err;
+  });
+};
+
+$("#guess").keyup(function(e) {
+  if(e.keyCode === 13) {
+    addName();
+  }
 });
 </script>

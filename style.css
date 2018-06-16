@@ -129,6 +129,7 @@ h4 {
 }
 
 .my-button {
+  font-family: Light;
   background: rgba(255, 255, 255, 0.8);
   padding-bottom: 0.75%;
   margin-bottom: 2%;
@@ -249,6 +250,12 @@ h4 {
 #car-gif {
   height: 15em;
   background: white url("Media/car.gif") no-repeat center;
+  background-size: auto;
+}
+
+#yay-gif {
+  height: 10em;
+  background: white url("Media/congrats.gif") space center;
   background-size: auto;
 }
 

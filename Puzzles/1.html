@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="../myscripts.js"></script>
   <link rel="stylesheet" type="text/css" href="../style.css">
   <link rel="icon" href="../Media/icon.png">
 
@@ -25,31 +26,23 @@
       <h2 class="light indented" style="color: black;">23080120 1215030120091514 0919 02152008 200805 19052020091407 1506 08090708 190308151512 13211909030112 011404 1325 02091820081612010305?</blockquote></h2>
     </div>
     <div class="container-fluid padded-big">
-      <form name="guess-form" method="post" autocomplete="off">
-        <h2 class="bold centered">Enter your guess below:</h4><br>
-        <input type="text" name="guess" class="form-box centered"><br>
-        <input type="submit" class="my-button centered" value="Did you get it?">
-      </form>
-    </div>
-    <div class="container-fluid" id="reminder">
-      <h1 class="bold centered"><em>Don't forget to comment for rides!</em></h1>
+      <h2 class="bold centered">Enter your guess below:</h2><br>
+      <input type="text" name="guess" class="form-box centered" id="guess" autocomplete="off"><br>
+      <input type="button" class="my-button centered" onclick="getGuess()" value="Did you get it?">
     </div>
   </div>
 </body>
 </html>
 
 <script>
-$("form").submit(function(e) {
-  var guess = JSON.stringify($("form").serialize()).substr(7);
-  guess = guess.substr(0, guess.length - 1);
-  guess = guess.replace(/%20/g, " ");
-  guess = guess.toLowerCase();
-  console.log(guess);
-  if(guess === "albuquerque") {
-    alert("Nice job :)");
-  } else {
-    alert("Try again :)");
+function getGuess() {
+  var guess = document.getElementById("guess").value.toLowerCase();
+  checkAnswer(guess);
+};
+
+$("#guess").keyup(function(e) {
+  if(e.keyCode === 13) {
+    getGuess();
   }
-  e.preventDefault();
 });
 </script>
