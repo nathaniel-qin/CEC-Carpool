@@ -24,28 +24,6 @@
     <div class="container-fluid padded-big">
       <h1 class="bold centered"><em>Don't forget to comment for a ride!</em></h1>
     </div>
-    <div class="container-fluid padded-big">
-      <h2 class="regular centered">Enter your name for the leaderboard:</h2><br>
-      <input type="text" name="name" class="form-box centered" id="name" autocomplete="off"><br>
-      <input type="button" class="my-button centered" onclick="addName()" value="Submit">
-    </div>
   </div>
 </body>
 </html>
-
-<script>
-function addName() {
-  var name = document.getElementById("name").value;
-  const fs = require("fs");
-
-  fs.appendFile("scores.txt", name, function(err) {
-    if(err) throw err;
-  });
-};
-
-$("#guess").keyup(function(e) {
-  if(e.keyCode === 13) {
-    addName();
-  }
-});
-</script>
