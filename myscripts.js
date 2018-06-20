@@ -58,8 +58,18 @@ function checkAnswer1(guess) {
 function checkAnswer2(guess) {
   if(guess === "") {
     alertEmpty();
-  } else if(guess === "pineapple belongs on pizza" || guess === "pineapplebelongsonpizza") {
+  } else if(/sky/i.test(guess)) {
     toSuccess(2);
+  } else {
+    alertWrong();
+  }
+}
+
+function checkAnswer3(guess) {
+  if(guess === "") {
+    alertEmpty();
+  } else if(guess === "pineapple belongs on pizza" || guess === "pineapplebelongsonpizza") {
+    toSuccess(3);
   } else {
     alertWrong();
   }

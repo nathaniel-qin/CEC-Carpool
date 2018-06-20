@@ -19,15 +19,12 @@
   <div id="background-img">
     <div class="container-fluid padded-big">
       <h1 class="regular centered">Welcome to the second puzzle!</h1>
-      <h2 class="regular centered">Things will start getting harder now (:</h2>
+      <h2 class="regular centered">Hopefully you're getting the hang of this!</h2>
     </div>
     <div class="container-fluid padded-big puzzle">
-      <h3 class="bold" style="color: black;">Decode this message:</h3>
-      <h2 class="light indented" style="color: black;">(pinch - cohort) + (ear - row) + (purple - your) + (belt + oblong - trod - able) + (shout - hunter) + (input - irk - hut) + (frizz + act - fructose)</blockquote></h2>
-      <div id="hint" style="display:none;" class="container-fluid centered">
-        <h2 class="regular" style="color: red";>chill - recall = <span class="bold">hi</span></h2>
-      </div>
-      <input id="hint-button" type="button" class="my-button" value="Give me a hint" onclick="showHint()" />
+      <h3 class="bold centered" style="color: black;">Can you answer this?</h3>
+      <br>
+      <h2 class="light centered" style="color: black;">behold, the satin raised up high-<br>although it soars, it cannot fly;<br>its semblance often azure shades,<br>but moments pass and brilliance fades.<br>the woolen clusters woven in<br>grow densely thick or wispy thin;<br>and though it sometimes cries from strife,<br>its weeping blesses all with life.<br><br>What is it?</h2>
     </div>
     <div class="container-fluid padded-big">
       <h2 class="bold centered">Enter your guess below:</h2><br>
@@ -42,11 +39,6 @@ function getGuess() {
   var guess = document.getElementById("guess").value.toLowerCase();
   checkAnswer2(guess);
 };
-
-function showHint() {
-   document.getElementById("hint").style.display = "block";
-   document.getElementById("hint-button").style.display = "none";
-}
 
 $("#guess").keyup(function(e) {
   if(e.keyCode === 13) {
