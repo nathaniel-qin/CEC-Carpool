@@ -17,13 +17,34 @@
   <div class="container centered" onclick="window.location.href='index.html';" id="header-img"></div>
   <div id="background-img">
     <div class="container-fluid padded-big">
-      <h1 class="bold centered">Welcome to CEC-Life Carpool</h1>
-      <h2 class="light centered">My name is Nathaniel Qin, your 2018-2019 carpool admiral (:</h2>
+      <h1 class="bold centered">Let me know if you need a ride!</h1>
     </div>
-    <div class="container-fluid" id="car-gif"></div>
     <div class="container-fluid padded-big">
-      <h3 class="regular centered">Every week, I will have a short and (hopefully) fun puzzle for you guys to solve.</h3>
-      <h2 class="light centered">But first, fill out the form on the next page to indicate if you need a ride!</h2>
+      <form action="https://formspree.io/nathaniel.qin1@gmail.com" autocomplete="off" name="ride-sign-up" method="post">
+        <input type="text" name="_gotcha" style="display: none;">
+        Do you need a ride this week?<br>
+        <input type="radio" name="day" value="friday">Yes, for Friday<br>
+        <input type="radio" name="day" value="sunday">Yes, for Sunday<br>
+        <input type="radio" name="day" value="both">Yes, for both<br>
+        <input type="radio" name="day" value="none">No, just looking at the puzzle :)<br><br>
+        <div id="need-ride">
+          What's your name?<br>
+          <input type="text" name="name"><br>
+          Have you given your information to Carpool before?<br>
+          <input type="radio" name="new" value="yes">Yes<br>
+          <input type="radio" name="new" value="no">No<br>
+          <input type="radio" name="new" value="idk">I don't know<br>
+          <div id="first-time">
+            Where are you located (for pick-ups)?<br>
+            <input type="text" name="location"><br>
+            What's a good email address to reach you?<br>
+            <input type="text" name="email"><br>
+          </div>
+        </div>
+        Any additional comments?<br>
+        <input type="text" name="comments"><br>
+        <input type="submit" value="Send" class="my-button">
+      </form>
     </div>
     <div class="row centered padded-small">
       <div>
