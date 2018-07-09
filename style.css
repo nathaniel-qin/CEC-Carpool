@@ -149,6 +149,11 @@ form {
   }
 }
 
+input[type="text"] {
+  margin: 1%;
+  font-size: auto;
+}
+
 .bold {
   font-family: Bold;
 }

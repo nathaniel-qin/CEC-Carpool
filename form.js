@@ -66,6 +66,7 @@ function showNeedRideSunday() {
 }
 
 function showNeedRideBoth() {
+  showNeedRide();
   $('#friday').slideDown();
   $('#fri-sun-br').slideDown();
   $('#sunday').slideDown();
