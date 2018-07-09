@@ -52,17 +52,28 @@ function showNeedRide() {
 }
 
 function showNeedRideFriday() {
-  showNeedRide();
   $('#friday').slideDown();
   $('#sunday').slideUp();
   $('#fri-sun-br').slideUp();
+  clearDay('Sunday');
+  showNeedRide();
 }
 
 function showNeedRideSunday() {
-  showNeedRide();
   $('#friday').slideUp();
   $('#sunday').slideDown();
   $('#fri-sun-br').slideUp();
+  clearDay('Friday');
+  showNeedRide();
+}
+
+function clearDay(name) {
+  var radios = document.getElementsByName(name);
+  for(var i = 0; i < radios.length; i++) {
+    radios[i].checked = false;
+  }
+  var sug = document.getElementsByName(name + '_Sug');
+  sug[0].value = "";
 }
 
 function showNeedRideBoth() {
@@ -73,6 +84,26 @@ function showNeedRideBoth() {
 }
 
 function hideNeedRide() {
+  $('#sunday-sug').slideUp();
+  $('#friday-sug').slideUp();
+  $('#first-time').slideUp();
+
+  clearDay('Sunday');
+  clearDay('Friday');
+
+  clearInfo();
+
+  var name = document.getElementsByName('Name');
+  var firstRadios = document.getElementsByName('Is_New');
+  var comments = document.getElementsByName("Comments");
+
+  name[0].value = "";
+  comments[0].value = "";
+
+  for(var i = 0; i < firstRadios.length; i++) {
+    firstRadios[i].checked = false;
+  }
+
   $('#need-ride').slideUp();
 }
 
@@ -94,6 +125,14 @@ function showSundaySug() {
 
 function hideInfo() {
   $('#first-time').slideUp();
+  clearInfo();
+}
+
+function clearInfo() {
+  var loc = document.getElementsByName('Location');
+  var email = document.getElementsByName('Email');
+  loc[0].value = "";
+  email[0].value = "";
 }
 
 function showInfo() {
