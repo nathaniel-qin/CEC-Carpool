@@ -55,16 +55,19 @@ function showNeedRideFriday() {
   showNeedRide();
   $('#friday').slideDown();
   $('#sunday').slideUp();
+  $('#fri-sun-br').slideUp();
 }
 
 function showNeedRideSunday() {
   showNeedRide();
   $('#friday').slideUp();
   $('#sunday').slideDown();
+  $('#fri-sun-br').slideUp();
 }
 
 function showNeedRideBoth() {
   showNeedRideFriday();
+  $('#fri-sun-br').slideDown();
   $('#sunday').slideDown();
 }
 

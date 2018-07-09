@@ -30,7 +30,7 @@
         <input type="radio" name="Ride_for" value="friday" onclick="showNeedRideFriday()"> Yes, for Friday<br>
         <input type="radio" name="Ride_for" value="sunday" onclick="showNeedRideSunday()"> Yes, for Sunday<br>
         <input type="radio" name="Ride_for" value="both" onclick="showNeedRideBoth()"> Yes, for both<br>
-        <input type="radio" name="Ride_for" value="none" onclick="hideNeedRide()"> No, just looking at the puzzle
+        <input type="radio" name="Ride_for" value="none" onclick="hideNeedRide()"> No, just looking at the puzzle :)
         <div id="need-ride" style="display: none;">
           <hr>
           <p class="bold">What's your name?</p>
@@ -38,7 +38,6 @@
           <hr>
           <p class="bold">Do you want to go home afterwards or go out for food?</p>
           <div id="friday" style="display: none;">
-            <br>
             <p>Friday:</p>
             <input type="radio" name="Friday" value="home" onclick="hideFridaySug()"> Home<br>
             <input type="radio" name="Friday" value="out" onclick="showFridaySug()"> Out<br>
@@ -49,8 +48,10 @@
               <input type="text" name="Friday_Sug" class="form-box">
             </div>
           </div>
-          <div id="sunday" style="display: none;">
+          <div id="fri-sun-br" style="display: none;">
             <br>
+          </div>
+          <div id="sunday" style="display: none;">
             <p>Sunday:</p>
             <input type="radio" name="Sunday" value="home" onclick="hideSundaySug()"> Home<br>
             <input type="radio" name="Sunday" value="out" onclick="showSundaySug()"> Out<br>
@@ -62,9 +63,9 @@
             </div>
           </div>
           <hr>
-          <p class="bold">Have you given your information to Carpool before?</p>
-          <input type="radio" name="Is_New" value="no" onclick="hideInfo()"> Yes<br>
-          <input type="radio" name="Is_New" value="yes" onclick="showInfo()"> No<br>
+          <p class="bold">Is this your first time seeing this form?</p>
+          <input type="radio" name="Is_New" value="yes" onclick="showInfo()"> Yes<br>
+          <input type="radio" name="Is_New" value="no" onclick="hideInfo()"> No<br>
           <input type="radio" name="Is_New" value="idk" onclick="showInfo()"> I don't know<br>
           <div id="first-time" style="display: none;">
             <hr>
@@ -74,7 +75,7 @@
             <input type="text" name="Email" class="form-box"><br>
           </div>
           <hr>
-          <p class="bold">Any additional comments?</p>
+          <p class="bold">Any additional comments or special requests?</p>
           <input type="text" name="Comments" class="form-box">
         </div>
         <input type="hidden" name="_next" value="https://nathaniel-qin.github.io/CEC-Carpool/Puzzles/1.html">
