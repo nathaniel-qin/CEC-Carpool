@@ -101,6 +101,22 @@ h4 {
   }
 }
 
+hr {
+  border: 1px solid white;
+  margin: 5% 0;
+  border-radius: 10px;
+}
+
+form {
+  color: black;
+  font-size: 1.5vw;
+}
+
+form p {
+  line-height: 3.5vw;
+  font-size: 3vw !important;
+}
+
 .bold {
   font-family: Bold;
 }
@@ -193,13 +209,18 @@ h4 {
   text-indent: 5%;
 }
 
+.form-div {
+  width: 70%;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 20px gray;
+}
+
 .form-box {
   font-family: Light;
-  margin-top: -1.5%;
   border: none;
   border-bottom: 3px solid #5F84D8;
-  padding: -10%;
-  height: 50px;
+  padding: 0.5% 1%;
   width: 80%;
 }
 
@@ -230,6 +251,7 @@ h4 {
   background: url("Media/background.png") no-repeat center top fixed;
   background-color: #B7CDFF;
   background-size: cover;
+  padding-bottom: 10%;
 }
 
 #header-img {

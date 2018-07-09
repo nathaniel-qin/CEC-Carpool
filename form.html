@@ -6,10 +6,13 @@
   <meta charset="utf-8">
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="myscripts.js"></script>
+  <script src="myscripts.min.js"></script>
+  <script src="formscripts.min.js"></script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="icon" href="Media/icon.png">
 </head>
@@ -19,53 +22,65 @@
     <div class="container-fluid padded-big">
       <h1 class="bold centered">Let me know if you need a ride!</h1>
     </div>
-    <div class="container-fluid padded-big">
-      <form action="https://formspree.io/nathaniel.qin1@gmail.com" autocomplete="off" name="ride-sign-up" method="post">
+    <div class="container-fluid padded-big form-div regular">
+      <form action="https://formspree.io/nathaniel.qin1@gmail.com" autocomplete="off" name="ride_sign_up" method="post">
+        <input type="hidden" name="_subject" value="Carpool">
         <input type="text" name="_gotcha" style="display: none;">
-        Do you need a ride this week?<br>
-        <input type="radio" name="day" value="friday">Yes, for Friday<br>
-        <input type="radio" name="day" value="sunday">Yes, for Sunday<br>
-        <input type="radio" name="day" value="both">Yes, for both<br>
-        <input type="radio" name="day" value="none">No, just looking at the puzzle :)<br><br>
-        <div id="need-ride">
-          What's your name?<br>
-          <input type="text" name="name"><br>
-          Do you want to go home afterwards or go out for food?<br>
-          Friday:<br>
-          <input type="radio" name="after-f" value="home">Home<br>
-          <input type="radio" name="after-f" value="out">Out<br>
-          <input type="radio" name="after-f" value="idk">Undecided<br>
-          Sunday:<br>
-          <input type="radio" name="after-s" value="home">Home<br>
-          <input type="radio" name="after-s" value="out">Out<br>
-          <input type="radio" name="after-s" value="idk">Undecided<br>
-          Have you given your information to Carpool before?<br>
-          <input type="radio" name="new" value="yes">Yes<br>
-          <input type="radio" name="new" value="no">No<br>
-          <input type="radio" name="new" value="idk">I don't know<br>
-          <div id="first-time">
-            Where are you located (for pick-ups)?<br>
-            <input type="text" name="location"><br>
-            What's a good email address to reach you?<br>
-            <input type="text" name="email"><br>
+        <p class="bold">Do you need a ride this week?</p>
+        <input type="radio" name="Ride_for" value="friday" onclick="showNeedRideFriday()"> Yes, for Friday<br>
+        <input type="radio" name="Ride_for" value="sunday" onclick="showNeedRideSunday()"> Yes, for Sunday<br>
+        <input type="radio" name="Ride_for" value="both" onclick="showNeedRideBoth()"> Yes, for both<br>
+        <input type="radio" name="Ride_for" value="none" onclick="hideNeedRide()"> No, just looking at the puzzle :)
+        <div id="need-ride" style="display: none;">
+          <hr>
+          <p class="bold">What's your name?</p>
+          <input type="text" name="Name" class="form-box"><br>
+          <hr>
+          <p class="bold">Do you want to go home afterwards or go out for food?</p>
+          <div id="friday" style="display: none;">
+            <br>
+            <p>Friday:</p>
+            <input type="radio" name="Friday" value="home" onclick="hideFridaySug()"> Home<br>
+            <input type="radio" name="Friday" value="out" onclick="showFridaySug()"> Out<br>
+            <input type="radio" name="Friday" value="idk" onclick="showFridaySug()"> Undecided<br>
+            <div id="friday-sug" style="display: none;">
+              <br>
+              <p>Any suggestions for where to go?</p>
+              <input type="text" name="Friday_Sug" class="form-box">
+            </div>
           </div>
-          Any additional comments?<br>
-          <input type="text" name="comments"><br>
+          <div id="sunday" style="display: none;">
+            <br>
+            <p>Sunday:</p>
+            <input type="radio" name="Sunday" value="home" onclick="hideSundaySug()"> Home<br>
+            <input type="radio" name="Sunday" value="out" onclick="showSundaySug()"> Out<br>
+            <input type="radio" name="Sunday" value="idk" onclick="showSundaySug()"> Undecided<br>
+            <div id="sunday-sug" style="display: none;">
+              <br>
+              <p>Any suggestions for where to go?</p>
+              <input type="text" name="Sunday_Sug" class="form-box">
+            </div>
+          </div>
+          <hr>
+          <p class="bold">Have you given your information to Carpool before?</p>
+          <input type="radio" name="Is_New" value="yes" onclick="hideInfo()"> Yes<br>
+          <input type="radio" name="Is_New" value="no" onclick="showInfo()"> No<br>
+          <input type="radio" name="Is_New" value="idk" onclick="showInfo()"> I don't know<br>
+          <div id="first-time" style="display: none;">
+            <hr>
+            <p class="bold">Where are you located (for pick-ups)?</p>
+            <input type="text" name="Location" class="form-box"><br><br>
+            <p class="bold">What's a good email address to reach you?</p>
+            <input type="text" name="Email" class="form-box"><br>
+          </div>
+          <hr>
+          <p class="bold">Any additional comments?</p>
+          <input type="text" name="Comments" class="form-box">
         </div>
-        <input type="submit" value="Send" class="my-button">
+        <input type="hidden" value="_next" value="https://nathaniel-qin.github.io/CEC-Carpool/Puzzles/1.html">
+        <hr>
+        <input type="submit" value="Take me to the puzzle!" class="my-button centered" onclick="return checkform()">
       </form>
-    </div>
-    <div class="row centered padded-small">
-      <div>
-        <button type="button" class="my-button centered" id="new-puzzle">
-          <h4 class="light">Take me to the next page</h4>
-        </button>
-      </div>
-      <div>
-        <button type="button" class="my-button centered" id="archives" style="margin-bottom: 10%;">
-          <h4 class="light">I want to see the old puzzles</h4>
-        </button>
-      </div>
     </div>
   </div>
 </body>
@@ -79,4 +94,102 @@ $("#new-puzzle").click(function() {
 $("#archives").click(function() {
   window.location.href = "archives.html";
 });
+
+function checkform() {
+  var rideRadios = document.getElementsByName('Ride_for');
+
+  if(rideRadios[3].checked) {
+    return true;
+  } else if(rideRadios[0].checked || rideRadios[1].checked || rideRadios[2].checked) {
+    if(document.ride_sign_up.Name.value === "") {
+      alert("Please enter your name.");
+      return false;
+    }
+    if(rideRadios[0].checked || rideRadios[2].checked) {
+      var friRadios = document.getElementsByName('Friday');
+      if(!friRadios[0].checked && !friRadios[1].checked && !friRadios[2].checked) {
+        alert("Please select where you're going afterwards on Friday.");
+        return false;
+      }
+    }
+    if(rideRadios[1].checked || rideRadios[2].checked) {
+      var sunRadios = document.getElementsByName('Sunday');
+      if(!sunRadios[0].checked && !sunRadios[1].checked && !sunRadios[2].checked) {
+        alert("Please select where you're going afterwards on Sunday.");
+        return false;
+      }
+    }
+    var infoRadios = document.getElementsByName('Is_New');
+    if(infoRadios[0].checked) {
+      return true;
+    } else if(infoRadios[1].checked || infoRadios[2].checked) {
+      if(document.ride_sign_up.Location.value === "") {
+        alert("Please enter a location.");
+        return false;
+      }
+      if(document.ride_sign_up.Email.value === "") {
+        alert("Please enter an email.");
+        return false;
+      }
+      if(document.ride_sign_up.Email.value.search('@') < 0) {
+        alert("Please enter a valid email.");
+        return false;
+      }
+      return true;
+    }
+    alert("Please select if you've given your information before.");
+    return false;
+  }
+  alert("Please select if you need a ride.");
+  return false;
+};
+
+function showNeedRide() {
+  $('#need-ride').slideDown();
+}
+
+function showNeedRideFriday() {
+  showNeedRide();
+  $('#friday').slideDown();
+  $('#sunday').slideUp();
+}
+
+function showNeedRideSunday() {
+  showNeedRide();
+  $('#friday').slideUp();
+  $('#sunday').slideDown();
+}
+
+function showNeedRideBoth() {
+  showNeedRideFriday();
+  $('#sunday').slideDown();
+}
+
+function hideNeedRide() {
+  $('#need-ride').slideUp();
+}
+
+function hideFridaySug() {
+  $('#friday-sug').slideUp();
+}
+
+function showFridaySug() {
+  $('#friday-sug').slideDown();
+}
+
+function hideSundaySug() {
+  $('#sunday-sug').slideUp();
+}
+
+function showSundaySug() {
+  $('#sunday-sug').slideDown();
+}
+
+function hideInfo() {
+  $('#first-time').slideUp();
+}
+
+function showInfo() {
+  $('#first-time').slideDown();
+}
 </script>
