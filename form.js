@@ -1,6 +1,10 @@
 function checkform() {
   var rideRadios = document.getElementsByName('Ride_for');
 
+  if(rideRadios[3].checked) {
+    return true;
+  }
+
   var now = new Date();
   var day = now.getDay();
   switch(day) {
@@ -44,9 +48,7 @@ function checkform() {
       return false;
   }
 
-  if(rideRadios[3].checked) {
-    return true;
-  } else if(rideRadios[0].checked || rideRadios[1].checked || rideRadios[2].checked) {
+  if(rideRadios[0].checked || rideRadios[1].checked || rideRadios[2].checked) {
     if(document.ride_sign_up.Name.value === "") {
       alert("Please enter your name.");
       return false;
