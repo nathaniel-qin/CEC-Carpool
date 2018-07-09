@@ -1,6 +1,48 @@
 function checkform() {
   var rideRadios = document.getElementsByName('Ride_for');
 
+  var now = new Date();
+  var day = now.getDay();
+  switch(day) {
+    case 0:
+    case 1:
+    case 2:
+      alert("It's too early to request a ride :)");
+      return false;
+    case 3:
+      var hour = now.getHours();
+      if(hour < 12) {
+        alert("It's too early to request a ride :)");
+        return false;
+      }
+      break;
+    case 4:
+      var hour = now.getHours();
+      if(requestedDay('Friday') && hour >= 9) {
+        alert("You missed the deadline for Friday :(");
+        return false;
+      }
+      break;
+    case 5:
+      if(requestedDay('Friday')) {
+        alert("You missed the deadline for Friday :(");
+        return false;
+      }
+      break;
+    case 6:
+      if(requestedDay('Friday')) {
+        alert("It's too early to request Friday :)");
+        return false;
+      }
+      var hour = now.getHours();
+      if(requestedDay('Sunday') && hour >= 9) {
+        alert("You missed the deadline for Sunday :(");
+        return false;
+      }
+    default:
+      alert("You should never see this message");
+      return false;
+  }
 
   if(rideRadios[3].checked) {
     return true;
@@ -47,6 +89,20 @@ function checkform() {
   alert("Please select if you need a ride.");
   return false;
 };
+
+function requestedDay(day) {
+  var radios = document.getElementsByName("Ride_for");
+  if(day === "Friday") {
+    if(radios[0].checked || radios[2].checked) {
+      return true;
+    }
+  } else if(day === "Sunday") {
+    if(radios[1].checked || radios[2].checked) {
+      return true;
+    }
+  }
+  return false;
+}
 
 function showNeedRide() {
   $('#need-ride').slideDown();
