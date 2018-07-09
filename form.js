@@ -166,18 +166,34 @@ function hideNeedRide() {
 
 function hideFridaySug() {
   $('#friday-sug').slideUp();
+  $('#fri-alert').hide();
 }
 
 function showFridaySug() {
   $('#friday-sug').slideDown();
+
+  var radios = document.getElementsByName('Friday');
+  if(radios[2].checked) {
+    $('#fri-alert').show();
+  } else {
+    $('#fri-alert').hide();
+  }
 }
 
 function hideSundaySug() {
   $('#sunday-sug').slideUp();
+  $('#sun-alert').hide();
 }
 
 function showSundaySug() {
   $('#sunday-sug').slideDown();
+
+  var radios = document.getElementsByName('Sunday');
+  if(radios[2].checked) {
+    $('#sun-alert').show();
+  } else {
+    $('#sun-alert').hide();
+  }
 }
 
 function hideInfo() {
