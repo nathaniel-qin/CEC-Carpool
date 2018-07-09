@@ -115,11 +115,29 @@ form {
   form {
     font-size: 3.5vw;
   }
+
+  form p {
+    font-size: 5vw;
+    line-height: 5.5vw;
+  }
+
+  input[type="text"] {
+    font-size: 3.25vw;
+  }
 }
 
 @media screen and (min-width: 768px) {
   form {
     font-size: 2vw;
+  }
+
+  form p {
+    font-size: 3.5vw;
+    line-height: 4vw;
+  }
+
+  input[type="text"] {
+    font-size: 1.75vw;
   }
 }
 
@@ -127,31 +145,15 @@ form {
   form {
     font-size: 1.5vw;
   }
-}
 
-@media screen and (max-width: 767px) {
-  form p {
-    font-size: 5vw;
-    line-height: 5.5vw;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  form p {
-    font-size: 3.5vw;
-    line-height: 4vw;
-  }
-}
-@media screen and (min-width: 992px) {
   form p {
     font-size: 3vw;
     line-height: 3.5vw;
   }
-}
 
-input[type="text"] {
-  margin: 1%;
-  font-size: auto;
+  input[type="text"] {
+    font-size: 1.25vw;
+  }
 }
 
 .bold {
@@ -257,7 +259,7 @@ input[type="text"] {
   font-family: Light;
   border: none;
   border-bottom: 3px solid #5F84D8;
-  padding: 0.5% 1%;
+  padding: 5px 10px;
   width: 80%;
 }
 
