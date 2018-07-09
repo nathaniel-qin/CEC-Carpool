@@ -1,6 +1,7 @@
 function checkform() {
   var rideRadios = document.getElementsByName('Ride_for');
 
+
   if(rideRadios[3].checked) {
     return true;
   } else if(rideRadios[0].checked || rideRadios[1].checked || rideRadios[2].checked) {
