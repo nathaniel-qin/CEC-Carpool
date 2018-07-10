@@ -1,5 +1,9 @@
-function alertEmpty() {
-  alert("You have to actually type something...");
+function alertEmpty(guess) {
+  if(guess === "") {
+    alert("You have to actually type something...");
+    return true;
+  }
+  return false;
 }
 
 function toSuccess(number) {
@@ -46,31 +50,41 @@ function alertWrong() {
 }
 
 function checkAnswer1(guess) {
-  if(guess === "") {
-    alertEmpty();
-  } else if(guess === "albuquerque") {
-    toSuccess(1);
-  } else {
-    alertWrong();
+  if(!alertEmpty(guess)) {
+    if(guess === "albuquerque") {
+      toSuccess(1);
+    } else {
+      alertWrong();
+    }
   }
 }
 
 function checkAnswer2(guess) {
-  if(guess === "") {
-    alertEmpty();
-  } else if(/sky/i.test(guess)) {
-    toSuccess(2);
-  } else {
-    alertWrong();
+  if(!alertEmpty(guess)) {
+    if(/sky/i.test(guess)) {
+      toSuccess(2);
+    } else {
+      alertWrong();
+    }
   }
 }
 
 function checkAnswer3(guess) {
-  if(guess === "") {
-    alertEmpty();
-  } else if(guess === "pineapple belongs on pizza" || guess === "pineapplebelongsonpizza") {
-    toSuccess(3);
-  } else {
-    alertWrong();
+  if(!alertEmpty(guess)) {
+    if(guess === "pineapple belongs on pizza" || guess === "pineapplebelongsonpizza") {
+      toSuccess(3);
+    } else {
+      alertWrong();
+    }
+  }
+}
+
+function checkAnswer4(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "3221") {
+      toSuccess(4);
+    } else {
+      alertWrong();
+    }
   }
 }

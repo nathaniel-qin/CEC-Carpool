@@ -248,7 +248,6 @@ form {
   padding-left: 10%;
   padding-right: 10%;
   display: block;
-  color: black;
 }
 
 .indented {
@@ -308,7 +307,7 @@ form {
   background: url("Media/background.png") no-repeat center top fixed;
   background-color: #B7CDFF;
   background-size: cover;
-  padding-bottom: 10%;
+  min-height: 100vh;
 }
 
 #header-img {

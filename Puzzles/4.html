@@ -2,14 +2,14 @@
 
 <html lang="en">
 <head>
-  <title>Carpool - Puzzle #3</title>
+  <title>Carpool - Puzzle #4</title>
   <meta charset="utf-8">
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="../myscripts.js"></script>
+  <script src="../myscripts.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../style.css">
   <link rel="icon" href="../Media/icon.png">
 
@@ -22,31 +22,29 @@
       <h2 class="regular centered">Hopefully this isn't too hard (:</h2>
     </div>
     <div class="container-fluid padded-big puzzle">
-      <h3 class="bold">Decode this message:</h3>
-      <h2 class="light indented">(pinch - cohort) + (ear - row) + (purple - your) + (belt + oblong - trod - able) + (shout - hunter) + (input - irk - hut) + (frizz + act - fructose)</h2>
-      <div id="hint" style="display:none;" class="container-fluid centered">
-        <h2 class="regular" style="color: red";>chill - recall = <span class="bold">hi</span></h2>
-      </div>
-      <input id="hint-button" type="button" class="my-button" value="Give me a hint" onclick="showHint()" />
+      <h3 class="bold" style="color: black;">Uh oh! You forgot the 4-digit combination to your safe. For some reason, you put your phone charger in there and your phone is running out of battery. Luckily, you wrote down this hint for situations like these. Each '?' represents a digit in the combination:</h3><br>
+      <h2 class="light centered" style="color: black;">7 + 7 + 4 + 7 = 1</h2>
+      <h2 class="light centered" style="color: black;">4 + 4 + 7 + 4 = ?</h2>
+      <h2 class="light centered" style="color: black;">2 + 0 + 3 + 3 = 1</h2>
+      <h2 class="light centered" style="color: black;">3 + 1 + 4 + 4 = ?</h2>
+      <h2 class="light centered" style="color: black;">5 + 7 + 4 + 2 = 3</h2>
+      <h2 class="light centered" style="color: black;">4 + 6 + 3 + 1 = ?</h2>
+      <h2 class="light centered" style="color: black;">2 + 4 + 6 + 8 = 4</h2>
+      <h2 class="light centered" style="color: black;">1 + 5 + 5 + 9 = ?</h2>
     </div>
     <div class="container-fluid padded-big">
-      <h2 class="bold centered">Enter your guess below:</h2><br>
+      <h2 class="bold centered">What's the combination?</h2><br>
       <input type="text" name="guess" class="form-box centered" id="guess" autocomplete="off"><br>
-      <input type="button" class="my-button centered" onclick="getGuess()" value="Did you get it?">
+      <input type="button" class="my-button centered" onclick="getGuess()" value="Can you charge your phone?">
     </div>
   </div>
 </html>
 
 <script>
 function getGuess() {
-  var guess = document.getElementById("guess").value.toLowerCase();
-  checkAnswer3(guess);
+  var guess = document.getElementById("guess").value;
+  checkAnswer4(guess);
 };
-
-function showHint() {
-   document.getElementById("hint").style.display = "block";
-   document.getElementById("hint-button").style.display = "none";
-}
 
 $("#guess").keyup(function(e) {
   if(e.keyCode === 13) {
