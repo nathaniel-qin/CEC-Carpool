@@ -9,20 +9,27 @@ function checkform() {
   var day = now.getDay();
   switch(day) {
     case 0:
+      if(requestedDay('Sunday') && hour <= 9) {
+        alert("You missed the deadline for Sunday :(");
+        return false;
+      } else {
+        alert("It's too early :)");
+        return false;
+      }
     case 1:
     case 2:
-      alert("It's too early to request a ride :)");
+      alert("It's too early :)");
       return false;
     case 3:
       var hour = now.getHours();
       if(hour < 12) {
-        alert("It's too early to request a ride :)");
+        alert("It's too early :)");
         return false;
       }
       break;
     case 4:
       var hour = now.getHours();
-      if(requestedDay('Friday') && hour >= 9) {
+      if(requestedDay('Friday') && hour >= 21) {
         alert("You missed the deadline for Friday :(");
         return false;
       }
@@ -39,10 +46,11 @@ function checkform() {
         return false;
       }
       var hour = now.getHours();
-      if(requestedDay('Sunday') && hour >= 9) {
+      if(requestedDay('Sunday') && hour >= 21) {
         alert("You missed the deadline for Sunday :(");
         return false;
       }
+      break;
     default:
       alert("You should never see this message");
       return false;
