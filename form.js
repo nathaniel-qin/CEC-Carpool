@@ -3,7 +3,7 @@ function checkform() {
 
   if(rideRadios[3].checked) {
     setTimeout(function() {
-      window.location.href="Puzzles/1.html";
+      window.location.href = document.getElementsByName('_next')[0].value;
     }, 0)
     return false;
   }

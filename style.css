@@ -156,6 +156,10 @@ form {
   }
 }
 
+label {
+  margin: 2px;
+}
+
 .bold {
   font-family: Bold;
 }
