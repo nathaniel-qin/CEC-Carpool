@@ -2,7 +2,10 @@ function checkform() {
   var rideRadios = document.getElementsByName('Ride_for');
 
   if(rideRadios[3].checked) {
-    return true;
+    setTimeout(function() {
+      window.location.href="Puzzles/1.html";
+    }, 0)
+    return false;
   }
 
   var now = new Date();
