@@ -8,7 +8,7 @@ function alertEmpty(guess) {
 
 function toSuccess(number) {
   alert("Wowzers!");
-  window.location.href = "../Successes/success" + number + ".html";
+  window.location.href = "../success.html?puzzle=" + number;
 }
 
 function alertWrong() {
