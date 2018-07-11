@@ -79,9 +79,9 @@ function checkform() {
       }
     }
     var infoRadios = document.getElementsByName('Is_New');
-    if(infoRadios[0].checked) {
+    if(infoRadios[1].checked) {
       return true;
-    } else if(infoRadios[1].checked || infoRadios[2].checked) {
+    } else if(infoRadios[0].checked || infoRadios[2].checked) {
       if(document.ride_sign_up.Location.value === "") {
         alert("Please enter a location.");
         return false;
