@@ -172,15 +172,19 @@ label {
   margin: 2px;
 }
 
+label p {
+  margin-left: 20px;
+  margin-top: -1vw;
+  margin-bottom: 0vw;
+}
+
 input[type="radio"] {
   display: inline-block;
   float: left;
 }
 
-label p {
-  margin-left: 20px;
-  margin-top: -1vw;
-  margin-bottom: 0vw;
+input[type="submit"] {
+  padding-bottom: 10px !important;
 }
 
 .bold {
@@ -219,10 +223,10 @@ label p {
 .my-button {
   font-family: Light;
   background: rgba(255, 255, 255, 0.8);
-  padding-bottom: 0.75%;
-  margin-bottom: 2%;
   padding-left: 5%;
   padding-right: 5%;
+  padding-top: 10px;
+  padding-bottom: 4px;
   border: none;
   box-shadow: 0px 3px 10px rgb(100, 100, 100);
   border-radius: 5px;
@@ -246,28 +250,10 @@ label p {
   outline: 0;
 }
 
-@media screen and (max-width: 575px) {
-  .my-button {
-    padding-top: 2%;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .my-button {
-    padding-top: 1.5%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .my-button {
-    padding-top: 1%;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .my-button {
-    padding-top: 1%;
-  }
+.button-margin {
+  margin-top: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .puzzle {
