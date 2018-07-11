@@ -27,10 +27,10 @@
         <input type="hidden" name="_subject" value="Carpool">
         <input type="text" name="_gotcha" style="display: none;">
         <p class="bold">Do you need a ride this week?</p>
-        <label><input type="radio" name="Ride_for" value="friday" onclick="showNeedRideFriday()"> Yes, for Friday night (pickups at 6:50pm)</label><br>
-        <label><input type="radio" name="Ride_for" value="sunday" onclick="showNeedRideSunday()"> Yes, for Sunday service (pickups at 8:50am)</label><br>
-        <label><input type="radio" name="Ride_for" value="both" onclick="showNeedRideBoth()"> Yes, for both</label><br>
-        <label><input type="radio" name="Ride_for" value="none" onclick="hideNeedRide()"> No, just looking at the puzzle :)</label>
+        <label><input type="radio" name="Ride_for" value="friday" onclick="showNeedRideFriday()"><p> Yes, for Friday night (pickups at 6:50pm)</p></label><br>
+        <label><input type="radio" name="Ride_for" value="sunday" onclick="showNeedRideSunday()"><p> Yes, for Sunday service (pickups at 8:50am)</p></label><br>
+        <label><input type="radio" name="Ride_for" value="both" onclick="showNeedRideBoth()"><p> Yes, for both</p></label><br>
+        <label><input type="radio" name="Ride_for" value="none" onclick="hideNeedRide()"><p> No, just looking at the puzzle :)</p></label>
         <div id="need-ride" style="display: none;">
           <hr>
           <p class="bold">What's your name?</p>
@@ -39,13 +39,13 @@
           <p class="bold">Do you want to go home afterwards or go out for food?</p>
           <div id="friday" style="display: none;">
             <p>Friday:</p>
-            <label><input type="radio" name="Friday" value="home" onclick="hideFridaySug()"> Home</label><br>
-            <label><input type="radio" name="Friday" value="out" onclick="showFridaySug()"> Out</label><br>
-            <label><input type="radio" name="Friday" value="idk" onclick="showFridaySug()"> Undecided</label><br>
+            <label><input type="radio" name="Friday" value="home" onclick="hideFridaySug()"><p> Home</p></label><br>
+            <label><input type="radio" name="Friday" value="out" onclick="showFridaySug()"><p> Out</p></label><br>
+            <label><input type="radio" name="Friday" value="idk" onclick="showFridaySug()"><p> Undecided</p></label><br>
             <span class="alert" id="fri-alert">Please avoid selecting this option if possible :)<br></span>
             <div id="friday-sug" style="display: none;">
               <br>
-              <p>Any suggestions for where to go out to?</p>
+              <p>Any suggestions for where to go eat?</p>
               <input type="text" name="Friday_Sug" class="form-box">
             </div>
           </div>
@@ -54,21 +54,21 @@
           </div>
           <div id="sunday" style="display: none;">
             <p>Sunday:</p>
-            <label><input type="radio" name="Sunday" value="home" onclick="hideSundaySug()"> Home</label><br>
-            <label><input type="radio" name="Sunday" value="out" onclick="showSundaySug()"> Out</label><br>
-            <label><input type="radio" name="Sunday" value="idk" onclick="showSundaySug()"> Undecided</label><br>
+            <label><input type="radio" name="Sunday" value="home" onclick="hideSundaySug()"><p> Home</p></label><br>
+            <label><input type="radio" name="Sunday" value="out" onclick="showSundaySug()"><p> Out</p></label><br>
+            <label><input type="radio" name="Sunday" value="idk" onclick="showSundaySug()"><p> Undecided</p></label><br>
             <span class="alert" id="sun-alert">Please avoid selecting this option if possible :)<br></span>
             <div id="sunday-sug" style="display: none;">
               <br>
-              <p>Any suggestions for where to go out to?</p>
+              <p>Any suggestions for where to go eat?</p>
               <input type="text" name="Sunday_Sug" class="form-box">
             </div>
           </div>
           <hr>
           <p class="bold">Is this your first time filling out this form?</p>
-          <label><input type="radio" name="Is_New" value="yes" onclick="showInfo()"> Yes</label><br>
-          <label><input type="radio" name="Is_New" value="no" onclick="hideInfo()"> No</label><br>
-          <label><input type="radio" name="Is_New" value="idk" onclick="showInfo()"> I don't know</label><br>
+          <label><input type="radio" name="Is_New" value="yes" onclick="showInfo()"><p> Yes</p></label><br>
+          <label><input type="radio" name="Is_New" value="no" onclick="hideInfo()"><p> No</p></label><br>
+          <label><input type="radio" name="Is_New" value="idk" onclick="showInfo()"><p> I don't know</p></label><br>
           <div id="first-time" style="display: none;">
             <hr>
             <p class="bold">Where are you located (for pick-ups)?</p>
