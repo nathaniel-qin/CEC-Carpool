@@ -44,18 +44,18 @@ function checkform() {
       }
       break;
     case 6:
-      if(requestedDay('Friday')) {
-        alert("It's too early to request Friday :)");
-        return false;
-      }
       var hour = now.getHours();
       if(requestedDay('Sunday') && hour >= 21) {
         alert("You missed the deadline for Sunday :(");
         return false;
       }
+      if(requestedDay('Friday')) {
+        alert("It's too early to request Friday :)");
+        return false;
+      }
       break;
     default:
-      alert("You should never see this message");
+      alert("You should never see this message!");
       return false;
   }
 
