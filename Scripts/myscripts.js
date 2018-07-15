@@ -51,7 +51,7 @@ function alertWrong() {
 
 function checkAnswer1(guess) {
   if(!alertEmpty(guess)) {
-    if(guess === "albuquerque") {
+    if(/albuquerque/i.test(guess)) {
       toSuccess(1);
     } else {
       alertWrong();
@@ -71,7 +71,7 @@ function checkAnswer2(guess) {
 
 function checkAnswer3(guess) {
   if(!alertEmpty(guess)) {
-    if(guess === "pineapple belongs on pizza" || guess === "pineapplebelongsonpizza") {
+    if(/pineapple belongs on pizza/i.test(guess) || /pineapplebelongsonpizza/i.test(guess))) {
       toSuccess(3);
     } else {
       alertWrong();
