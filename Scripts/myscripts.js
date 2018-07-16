@@ -71,7 +71,7 @@ function checkAnswer2(guess) {
 
 function checkAnswer3(guess) {
   if(!alertEmpty(guess)) {
-    if(/pineapple belongs on pizza/i.test(guess) || /pineapplebelongsonpizza/i.test(guess))) {
+    if(/pineapple belongs on pizza/i.test(guess) || /pineapplebelongsonpizza/i.test(guess)) {
       toSuccess(3);
     } else {
       alertWrong();
