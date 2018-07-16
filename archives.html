@@ -22,16 +22,26 @@
     <div class="container-fluid padded-big puzzle">
       <h3 class="regular centered" style="color: black";>Oops, nothing here right now!</h3>
       <div class="row">
-        <div class="col-3">
+        <div class="col-lg-3 col-6">
+          <button class="my-button centered button-margin small-button" id="1">
+            <h4 class="light">Puzzle #1</h4>
+          </button>
         </div>
-        <div class="col-3">
+        <div class="col-lg-3 col-6">
         </div>
-        <div class="col-3">
+        <div class="col-lg-3 col-6">
         </div>
-        <div class="col-3">
+        <div class="col-lg-3 col-6">
         </div>
       </div>
     </div>
   </div>
 </body>
 </html>
+
+<script>
+$(document).click(function(e) {
+  if(e.target.tagName === "H4") e.target = e.target.parentElement;
+  window.location.href = "https://nathaniel-qin.github.io/CEC-Carpool/Puzzles/" + e.target.id + ".html";
+});
+</script>
