@@ -42,6 +42,8 @@
 $(document).click(function(e) {
   if(e.target.id === "header-img") return;
   if(e.target.tagName === "H4") e.target = e.target.parentElement;
-  window.location.href = "https://nathaniel-qin.github.io/CEC-Carpool/Puzzles/" + e.target.id + ".html";
+  if(isNumeric(e.target.id)) {
+    window.location.href = "https://nathaniel-qin.github.io/CEC-Carpool/Puzzles/" + e.target.id + ".html";
+  }
 });
 </script>
