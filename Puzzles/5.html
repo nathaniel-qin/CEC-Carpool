@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-  <title>Carpool - Puzzle #3</title>
+  <title>Carpool - Puzzle #5</title>
   <meta charset="utf-8">
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,16 +18,13 @@
   <div class="container centered" onclick="window.location.href='../index.html';" id="header-img"></div>
   <div id="background-img">
     <div class="container-fluid padded-big">
-      <h1 class="regular centered">Welcome to the third puzzle!</h1>
-      <h2 class="regular centered">Things will start getting harder now (:</h2>
+      <h1 class="regular centered">Welcome to the fifth puzzle!</h1>
+      <h2 class="regular centered">This time, you may need an outside resource (:</h2>
     </div>
     <div class="container-fluid padded-big puzzle">
-      <h3 class="bold" style="color: black;">Decode this message:</h3>
-      <h2 class="light indented" style="color: black;">(pinch - cohort) + (ear - row) + (purple - your) + (belt + oblong - trod - able) + (shout - hunter) + (input - irk - hut) + (frizz + act - fructose)</h2>
-      <div id="hint" style="display:none;" class="container-fluid centered">
-        <h2 class="regular" style="color: red";>chill - recall = <span class="bold">hi</span></h2>
-      </div>
-      <input id="hint-button" type="button" class="my-button" value="Give me a hint" onclick="showHint()" style="padding-bottom: 10px;" />
+      <h3 class="bold" style="color: black;">What's the missing sequence of letters?</h3>
+      <h2 class="light indented" style="color: black;">TAAAT TABTH _ _ _ _ _ ISTIA</h2>
+      <h2 class="light" style="color: black; text-align: right; margin-right: 50px;">- Mr. Frost</h2>
     </div>
     <div class="container-fluid padded-big">
       <h2 class="bold centered">Enter your guess below:</h2><br>
@@ -40,7 +37,7 @@
 <script>
 function getGuess() {
   var guess = document.getElementById("guess").value.toLowerCase();
-  checkAnswer3(guess);
+  checkAnswer5(guess);
 };
 
 $("#guess").keyup(function(e) {

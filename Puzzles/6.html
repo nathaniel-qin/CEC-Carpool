@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-  <title>Carpool - Puzzle #3</title>
+  <title>Carpool - Puzzle #6</title>
   <meta charset="utf-8">
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,19 +18,25 @@
   <div class="container centered" onclick="window.location.href='../index.html';" id="header-img"></div>
   <div id="background-img">
     <div class="container-fluid padded-big">
-      <h1 class="regular centered">Welcome to the third puzzle!</h1>
-      <h2 class="regular centered">Things will start getting harder now (:</h2>
+      <h1 class="regular centered">Welcome to the sixth puzzle!</h1>
+      <h2 class="regular centered">Let's test your decoding skills again...</h2>
     </div>
     <div class="container-fluid padded-big puzzle">
-      <h3 class="bold" style="color: black;">Decode this message:</h3>
-      <h2 class="light indented" style="color: black;">(pinch - cohort) + (ear - row) + (purple - your) + (belt + oblong - trod - able) + (shout - hunter) + (input - irk - hut) + (frizz + act - fructose)</h2>
-      <div id="hint" style="display:none;" class="container-fluid centered">
-        <h2 class="regular" style="color: red";>chill - recall = <span class="bold">hi</span></h2>
-      </div>
-      <input id="hint-button" type="button" class="my-button" value="Give me a hint" onclick="showHint()" style="padding-bottom: 10px;" />
+      <h3 class="bold" style="color: black;">How does the pattern continue?</h3>
+      <br>
+      <h2 class="light centered" style="color: black;">1 = O</h2>
+      <h2 class="light centered" style="color: black;">2 = W</h2>
+      <h2 class="light centered" style="color: black;">3 = R</h2>
+      <h2 class="light centered" style="color: black;">4 = R</h2>
+      <h2 class="light centered" style="color: black;">5 = F</h2>
+      <h2 class="light centered" style="color: black;">6 = X</h2>
+      <h2 class="light centered" style="color: black;">7 = E</h2>
+      <h2 class="light centered" style="color: black;">8 = ?</h2>
+      <h2 class="light centered" style="color: black;">9 = ?</h2>
+      <h2 class="light centered" style="color: black;">10 = ?</h2>
     </div>
     <div class="container-fluid padded-big">
-      <h2 class="bold centered">Enter your guess below:</h2><br>
+      <h2 class="bold centered">Enter the three missing letters below:</h2><br>
       <input type="text" name="guess" class="form-box centered" id="guess" autocomplete="off"><br>
       <input type="button" class="my-button centered button-margin" onclick="getGuess()" value="Did you get it?" style="padding-bottom: 10px;">
     </div>
@@ -40,7 +46,7 @@
 <script>
 function getGuess() {
   var guess = document.getElementById("guess").value.toLowerCase();
-  checkAnswer3(guess);
+  checkAnswer6(guess);
 };
 
 $("#guess").keyup(function(e) {

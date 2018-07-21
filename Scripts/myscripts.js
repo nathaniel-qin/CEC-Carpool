@@ -49,6 +49,11 @@ function alertWrong() {
   }
 }
 
+function showHint() {
+  $('#hint').slideDown(300);
+  $('#hint-button').slideUp(300);
+}
+
 function checkAnswer1(guess) {
   if(!alertEmpty(guess)) {
     if(/albuquerque/i.test(guess)) {
@@ -86,5 +91,51 @@ function checkAnswer4(guess) {
     } else {
       alertWrong();
     }
+  }
+}
+
+function checkAnswer5(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "aioyi") {
+      toSuccess(5);
+    } else {
+      alertWrong();
+    }
+  }
+}
+
+function checkAnswer6(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "gnt") {
+      toSuccess(6);
+    } else {
+      alertWrong();
+    }
+  }
+}
+
+function checkAnswer7(guess) {
+  var correct = true;
+
+  var colors = 'redgreenblue';
+  var red = colors.slice(3, 8);
+  var green = colors.slice(8);
+  var blue = colors.slice(0, 3);
+
+  var sequence = [red, red, green, blue, blue, green, red, green];
+
+  for(var i = 0; i < 8; i++) {
+    if(guess[i] !== sequence[i]) {
+      correct = false;
+      break;
+    }
+  }
+
+  if(correct) {
+    toSuccess(7);
+    return true;
+  } else {
+    alertWrong();
+    return false;
   }
 }

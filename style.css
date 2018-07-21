@@ -101,6 +101,10 @@ h4 {
   }
 }
 
+body {
+  overflow-wrap: break-word;
+}
+
 hr {
   border: 1px solid white;
   margin: 20px 0;
@@ -318,6 +322,72 @@ input[type="submit"] {
   .form-box {
     font-size: 2vw;
   }
+}
+
+.click-box {
+  font-family: Bold;
+  color: white;
+  font-size: 1.5em;
+  padding: 20px auto;
+  border: none;
+  box-shadow: 0px 3px 10px rgb(100, 100, 100);
+  border-radius: 5px;
+  border-bottom: 3px solid gray;
+  cursor: pointer;
+}
+
+.click-box:hover {
+  box-shadow: 0px 3px 10px rgb(80, 80, 80);
+}
+
+.click-box:active {
+  box-shadow: none;
+  transform: translateY(2px);
+  border-bottom: 2px solid gray;
+}
+
+.click-box#red:active {
+  border-top: 1px solid #E15037;
+}
+
+.click-box#green:active {
+  border-top: 1px solid #6FB472;
+}
+
+.click-box#blue:active {
+  border-top: 1px solid #3875A7;
+}
+
+.click-box:focus {
+  outline: 0;
+}
+
+.click-box#red {
+  background-color: #E15037;
+}
+
+.click-box#green {
+  background-color: #6FB472;
+}
+
+.click-box#blue {
+  background-color: #3875A7;
+}
+
+.progress-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.progress-square {
+  width: 8vw;
+  height: 3vw;
+  background-color: white;
+}
+
+.space {
+  width: 2vw;
 }
 
 #background-img {
