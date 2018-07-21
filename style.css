@@ -392,6 +392,12 @@ input[type="submit"] {
   background-color: white;
 }
 
+@media screen and (max-width: 767px) {
+  .progress-square {
+    height: 5vw;
+  }
+}
+
 .space {
   width: 2vw;
 }
