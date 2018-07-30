@@ -402,6 +402,30 @@ input[type="submit"] {
   width: 2vw;
 }
 
+#submitting {
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 50vw;
+  height: 50vh;
+  position: fixed;
+  left: 25%;
+  top: 25%;
+  display: none;
+}
+
+#submitting h1 {
+  line-height: 50vh;
+}
+
+#mask {
+  background-color: rgba(255, 255, 255, 0.3);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
 #background-img {
   background: url("Media/background.png") no-repeat center top fixed;
   background-color: #B7CDFF;

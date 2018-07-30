@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   <script src="Scripts/formscripts.min.js"></script>
+  <script src="Scripts/serializeObject.min.js"></script>
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -21,10 +22,12 @@
     <div class="container-fluid padded-big">
       <h1 class="bold centered">Let me know if you need a ride!</h1>
     </div>
+    <div id="mask"></div>
+    <div id="submitting">
+      <h1 class="bold centered">Submitting form...</h1>
+    </div>
     <div class="container-fluid padded-big form-div regular">
-      <form action="https://formspree.io/nathaniel.qin1@gmail.com" autocomplete="off" name="ride_sign_up" method="post">
-        <input type="hidden" name="_subject" value="Carpool">
-        <input type="text" name="_gotcha" style="display: none;">
+      <form autocomplete="off" id="ride_sign_up" name="ride_sign_up">
         <p class="bold">Do you need a ride this week?</p>
         <label><input type="radio" name="Ride_for" value="friday" onclick="showNeedRideFriday()"><p> Yes, for Friday night (pickups at 6:50pm)</p></label><br>
         <label><input type="radio" name="Ride_for" value="sunday" onclick="showNeedRideSunday()"><p> Yes, for Sunday service (pickups at 8:50am)</p></label><br>
@@ -33,14 +36,16 @@
         <div id="need-ride" style="display: none;">
           <hr>
           <p class="bold">What's your name?</p>
-          <input type="text" name="Name" class="form-box"><br>
+          <input type="text" name="Name" class="form-box"><br><br>
+          <p class="bold">What's your email address?</p>
+          <input type="text" name="Email" class="form-box"><br>
           <hr>
           <p class="bold">Do you want to go home afterwards or go out for food?</p>
           <div id="friday" style="display: none;">
             <p>Friday:</p>
             <label><input type="radio" name="Friday" value="home" onclick="hideFridaySug()"><p> Home</p></label><br>
             <label><input type="radio" name="Friday" value="out" onclick="showFridaySug()"><p> Out</p></label><br>
-            <label><input type="radio" name="Friday" value="idk" onclick="showFridaySug()"><p> Undecided</p></label><br>
+            <label><input type="radio" name="Friday" value="undecided" onclick="showFridaySug()"><p> Undecided</p></label><br>
             <span class="alert" id="fri-alert">Please avoid selecting this option if possible :)<br></span>
             <div id="friday-sug" style="display: none;">
               <br>
@@ -55,7 +60,7 @@
             <p>Sunday:</p>
             <label><input type="radio" name="Sunday" value="home" onclick="hideSundaySug()"><p> Home</p></label><br>
             <label><input type="radio" name="Sunday" value="out" onclick="showSundaySug()"><p> Out</p></label><br>
-            <label><input type="radio" name="Sunday" value="idk" onclick="showSundaySug()"><p> Undecided</p></label><br>
+            <label><input type="radio" name="Sunday" value="undecided" onclick="showSundaySug()"><p> Undecided</p></label><br>
             <span class="alert" id="sun-alert">Please avoid selecting this option if possible :)<br></span>
             <div id="sunday-sug" style="display: none;">
               <br>
@@ -72,16 +77,14 @@
             <hr>
             <p class="bold">Where are you located (for pick-ups)?</p>
             <input type="text" name="Location" class="form-box"><br><br>
-            <p class="bold">What's a good email address to reach you?</p>
-            <input type="text" name="Email" class="form-box"><br>
+            <p class="bold">What's a good phone number to reach you?</p>
+            <input type="text" name="Phone" class="form-box"><br>
           </div>
           <hr>
           <p class="bold">Any additional comments or special requests?</p>
           <input type="text" name="Comments" class="form-box">
         </div>
-        <input type="hidden" name="_next" value="https://nathaniel-qin.github.io/CEC-Carpool/Puzzles/3.html">
-        <hr>
-        <input type="submit" value="Take me to the puzzle!" class="my-button centered button-margin" onclick="return checkform()">
+        <input type="submit" value="Take me to the puzzle!" class="my-button centered button-margin" id="submit-button">
       </form>
     </div>
   </div>
@@ -95,5 +98,128 @@ $("#new-puzzle").click(function() {
 
 $("#archives").click(function() {
   window.location.href = "archives.html";
+});
+
+var $form = $('form#ride_sign_up'),
+    url = 'https://script.google.com/a/ucsd.edu/macros/s/AKfycbzD1TMMcMFCT6NJC24eyPBi8rLIReNo_Mct9YWC/exec'
+
+var nextUrl = "https://nathaniel-qin.github.io/CEC-Carpool/Puzzles/4.html";
+
+$('#submit-button').on('click', function(e) {
+
+  e.preventDefault();
+  var rideRadios = document.getElementsByName('Ride_for');
+
+  if(rideRadios[3].checked) {
+    setTimeout(function() {
+      window.location.href = nextUrl;
+    }, 0);
+    return false;
+  }
+
+  /*var now = new Date();
+  var day = now.getDay();
+  switch(day) {
+    case 0:
+      if(requestedDay('Sunday') && hour <= 9) {
+        alert("You missed the deadline for Sunday :(");
+        return false;
+      } else {
+        alert("It's too early :)");
+        return false;
+      }
+    case 1:
+    case 2:
+      alert("It's too early :)");
+      return false;
+    case 3:
+      var hour = now.getHours();
+      if(hour < 12) {
+        alert("It's too early :)");
+        return false;
+      }
+      break;
+    case 4:
+      var hour = now.getHours();
+      if(requestedDay('Friday') && hour >= 21) {
+        alert("You missed the deadline for Friday :(");
+        return false;
+      }
+      break;
+    case 5:
+      if(requestedDay('Friday')) {
+        alert("You missed the deadline for Friday :(");
+        return false;
+      }
+      break;
+    case 6:
+      var hour = now.getHours();
+      if(requestedDay('Sunday') && hour >= 21) {
+        alert("You missed the deadline for Sunday :(");
+        return false;
+      }
+      if(requestedDay('Friday')) {
+        alert("It's too early to request Friday :)");
+        return false;
+      }
+      break;
+    default:
+      alert("You should never see this message!");
+      return false;
+  }*/
+
+  if(rideRadios[0].checked || rideRadios[1].checked || rideRadios[2].checked) {
+    if(document.ride_sign_up.Name.value === "") {
+      alert("Please enter your name.");
+      return false;
+    }
+    if(rideRadios[0].checked || rideRadios[2].checked) {
+      var friRadios = document.getElementsByName('Friday');
+      if(!friRadios[0].checked && !friRadios[1].checked && !friRadios[2].checked) {
+        alert("Please select where you're going afterwards on Friday.");
+        return false;
+      }
+    }
+    if(rideRadios[1].checked || rideRadios[2].checked) {
+      var sunRadios = document.getElementsByName('Sunday');
+      if(!sunRadios[0].checked && !sunRadios[1].checked && !sunRadios[2].checked) {
+        alert("Please select where you're going afterwards on Sunday.");
+        return false;
+      }
+    }
+    var infoRadios = document.getElementsByName('Is_New');
+    if(infoRadios[0].checked || infoRadios[2].checked) {
+      if(document.ride_sign_up.Location.value === "") {
+        alert("Please enter a location.");
+        return false;
+      }
+      if(document.ride_sign_up.Email.value === "") {
+        alert("Please enter an email.");
+        return false;
+      }
+      if(document.ride_sign_up.Email.value.search('@') < 0) {
+        alert("Please enter a valid email.");
+        return false;
+      }
+    } else if(!infoRadios[1].checked) {
+      alert("Please select if you've given your information before.");
+      return false;
+    }
+  } else {
+    alert("Please select if you need a ride.");
+    return false;
+  }
+
+  $("#submitting").fadeIn();
+  $("#mask").fadeIn();
+
+  var jqxhr = $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject(),
+    success: nextPage,
+    error: alertError
+  });
 });
 </script>
