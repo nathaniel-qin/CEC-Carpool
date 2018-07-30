@@ -1,107 +1,14 @@
-function checkform() {
-  var rideRadios = document.getElementsByName('Ride_for');
+function nextPage(data) {
+  $("#submitting").fadeOut();
+  setTimeout(function() {
+    alert("Thanks for submitting! You should receive a confirmation email shortly.");
+    window.location.href = nextUrl;
+  }, 400);
+}
 
-  if(rideRadios[3].checked) {
-    setTimeout(function() {
-      window.location.href = document.getElementsByName('_next')[0].value;
-    }, 0)
-    return false;
-  }
-
-  var now = new Date();
-  var day = now.getDay();
-  switch(day) {
-    case 0:
-      if(requestedDay('Sunday') && hour <= 9) {
-        alert("You missed the deadline for Sunday :(");
-        return false;
-      } else {
-        alert("It's too early :)");
-        return false;
-      }
-    case 1:
-    case 2:
-      alert("It's too early :)");
-      return false;
-    case 3:
-      var hour = now.getHours();
-      if(hour < 12) {
-        alert("It's too early :)");
-        return false;
-      }
-      break;
-    case 4:
-      var hour = now.getHours();
-      if(requestedDay('Friday') && hour >= 21) {
-        alert("You missed the deadline for Friday :(");
-        return false;
-      }
-      break;
-    case 5:
-      if(requestedDay('Friday')) {
-        alert("You missed the deadline for Friday :(");
-        return false;
-      }
-      break;
-    case 6:
-      var hour = now.getHours();
-      if(requestedDay('Sunday') && hour >= 21) {
-        alert("You missed the deadline for Sunday :(");
-        return false;
-      }
-      if(requestedDay('Friday')) {
-        alert("It's too early to request Friday :)");
-        return false;
-      }
-      break;
-    default:
-      alert("You should never see this message!");
-      return false;
-  }
-
-  if(rideRadios[0].checked || rideRadios[1].checked || rideRadios[2].checked) {
-    if(document.ride_sign_up.Name.value === "") {
-      alert("Please enter your name.");
-      return false;
-    }
-    if(rideRadios[0].checked || rideRadios[2].checked) {
-      var friRadios = document.getElementsByName('Friday');
-      if(!friRadios[0].checked && !friRadios[1].checked && !friRadios[2].checked) {
-        alert("Please select where you're going afterwards on Friday.");
-        return false;
-      }
-    }
-    if(rideRadios[1].checked || rideRadios[2].checked) {
-      var sunRadios = document.getElementsByName('Sunday');
-      if(!sunRadios[0].checked && !sunRadios[1].checked && !sunRadios[2].checked) {
-        alert("Please select where you're going afterwards on Sunday.");
-        return false;
-      }
-    }
-    var infoRadios = document.getElementsByName('Is_New');
-    if(infoRadios[1].checked) {
-      return true;
-    } else if(infoRadios[0].checked || infoRadios[2].checked) {
-      if(document.ride_sign_up.Location.value === "") {
-        alert("Please enter a location.");
-        return false;
-      }
-      if(document.ride_sign_up.Email.value === "") {
-        alert("Please enter an email.");
-        return false;
-      }
-      if(document.ride_sign_up.Email.value.search('@') < 0) {
-        alert("Please enter a valid email.");
-        return false;
-      }
-      return true;
-    }
-    alert("Please select if you've given your information before.");
-    return false;
-  }
-  alert("Please select if you need a ride.");
-  return false;
-};
+function alertError(data) {
+  alert("There was an error processing your response. Please try again. If it persists, contact Nathaniel ASAP.")
+}
 
 function requestedDay(day) {
   var radios = document.getElementsByName("Ride_for");
@@ -216,7 +123,7 @@ function hideInfo() {
 
 function clearInfo() {
   var loc = document.getElementsByName('Location');
-  var email = document.getElementsByName('Email');
+  var email = document.getElementsByName('Phone');
   loc[0].value = "";
   email[0].value = "";
 }
