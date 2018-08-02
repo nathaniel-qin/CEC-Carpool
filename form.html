@@ -24,13 +24,13 @@
     </div>
     <div id="mask"></div>
     <div id="submitting">
-      <h4 class="bold centered">Submitting form...</h4>
+      <h2 class="bold centered">Submitting form...</h2>
     </div>
     <div class="container-fluid padded-big form-div regular">
       <form autocomplete="off" id="ride_sign_up" name="ride_sign_up">
         <p class="bold">Do you need a ride this week?</p>
         <label><input type="radio" name="Ride_for" value="friday" onclick="showNeedRideFriday()"><p> Yes, for Friday night at UCSD</p></label>
-        <span class="alert" id="no-ride-alert" style="display: inline;">*Please bus if possible! Parking is not free ):</span><br>
+        <span class="my-alert" id="no-ride-alert" style="display: inline;">*Please bus if possible! Parking is not free ):</span><br>
         <label><input type="radio" name="Ride_for" value="sunday" onclick="showNeedRideSunday()"><p> Yes, for Sunday service (pickups at 8:50am)</p></label><br>
         <label><input type="radio" name="Ride_for" value="both" onclick="showNeedRideBoth()"><p> Yes, for both</p></label><br>
         <label><input type="radio" name="Ride_for" value="none" onclick="hideNeedRide()"><p> No, just looking at the puzzle :)</p></label>
@@ -47,7 +47,7 @@
             <label><input type="radio" name="Friday" value="home" onclick="hideFridaySug()"><p> Home</p></label><br>
             <label><input type="radio" name="Friday" value="out" onclick="showFridaySug()"><p> Out</p></label><br>
             <label><input type="radio" name="Friday" value="undecided" onclick="showFridaySug()"><p> Undecided</p></label><br>
-            <span class="alert" id="fri-alert">Please avoid selecting this option if possible :)<br></span>
+            <span class="my-alert" id="fri-alert">Please avoid selecting this option if possible :)<br></span>
             <div id="friday-sug" style="display: none;">
               <br>
               <p>Any suggestions for where to go eat?</p>
@@ -62,7 +62,7 @@
             <label><input type="radio" name="Sunday" value="home" onclick="hideSundaySug()"><p> Home</p></label><br>
             <label><input type="radio" name="Sunday" value="out" onclick="showSundaySug()"><p> Out</p></label><br>
             <label><input type="radio" name="Sunday" value="undecided" onclick="showSundaySug()"><p> Undecided</p></label><br>
-            <span class="alert" id="sun-alert">Please avoid selecting this option if possible :)<br></span>
+            <span class="my-alert" id="sun-alert">Please avoid selecting this option if possible :)<br></span>
             <div id="sunday-sug" style="display: none;">
               <br>
               <p>Any suggestions for where to go eat?</p>

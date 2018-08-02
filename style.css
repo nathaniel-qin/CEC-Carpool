@@ -218,7 +218,7 @@ input[type="submit"] {
   padding: 1%;
 }
 
-.alert {
+.my-alert {
   font-family: Light;
   color: red;
   display: none;
@@ -413,7 +413,7 @@ input[type="submit"] {
   box-shadow: 0 0 25px gray;
 }
 
-#submitting h1 {
+#submitting h2 {
   line-height: 50vh;
 }
 
