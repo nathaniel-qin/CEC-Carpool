@@ -139,3 +139,14 @@ function checkAnswer7(guess) {
     return false;
   }
 }
+
+function checkAnswer8(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "76") {
+      toSuccess(8);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
