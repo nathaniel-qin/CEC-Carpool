@@ -161,7 +161,7 @@ label {
   margin: 2px;
 }
 
-label p {
+#ride_sign_up label p {
   margin-left: 20px;
   margin-top: -1vw;
   margin-bottom: 0vw;
@@ -293,6 +293,10 @@ input[type="submit"] {
   text-indent: 5%;
 }
 
+.padded-left {
+  padding-left: 5%;
+}
+
 .form-div {
   width: 70%;
   padding: 40px;
@@ -418,6 +422,14 @@ input[type="submit"] {
 
 .space {
   width: 2vw;
+}
+
+.big-top-margin {
+  margin-top: 40px;
+}
+
+#ride_sign_up p {
+  margin-bottom: 0.5rem;
 }
 
 #submitting {

@@ -21,15 +21,41 @@
   <div class="container centered" onclick="window.location.href='index.html';" id="header-img"></div>
   <div id="background-img">
     <div class="container-fluid padded-big">
-      <h1 class="bold centered">What is this all about?</h1>
-      <h2 class="light centered">With CEC so far from both SDSU and UCSD campuses, we need a way to get college students to church. Thus, carpool ministry was born.</h2>
+      <h1 class="bold centered">LIFE Fellowship is a Christian college fellowship.</h1>
+      <h2 class="light centered">With church so far from where students typically live, we need a way to get people there. That's where carpool ministry comes in.</h2>
     </div>
-    <div class="container-fluid padded-small puzzle">
-      <h3 class="regular centered" style="color: black;">question</h3>
-      <h2 class="light centered" style="color: black;">answer</h2>
-      <h3 class="regular centered button-margin" style="color: black;">question</h3>
-      <h2 class="light centered" style="color: black;">answer</h2>
+    <div class="container-fluid padded-big puzzle">
+      <h3 class="regular" style="color: black;">Where does LIFE Fellowship meet?</h3>
+      <h2 class="light padded-left" style="color: black;">We are affiliated with Chinese Evangelical Church of San Diego, located in Linda Vista, and this is where we gather for all of our regular meetings.</h2>
+      <h3 class="regular big-top-margin" style="color: black;">What kind of people are in LIFE Fellowship?</h3>
+      <h2 class="light padded-left" style="color: black;">LIFE is a group specifically for college students. We have members from UC San Diego, San Diego State University, and Point Loma Nazarene University.</h2>
+      <h3 class="regular big-top-margin" style="color: black;">What are LIFE's regular meetings?</h3>
+      <h2 class="light padded-left" style="color: black;">We have Friday night fellowship at 7:30pm on Fridays, Sunday School at 9:15am on Sundays, and Sunday worship service at 11:00am on Sundays at CEC. We also have weekly small groups, but we don't meet at CEC for these.</h2>
+      <h3 class="regular big-top-margin" style="color: black;">Who's going to drive me?</h3>
+      <h2 class="light padded-left" style="color: black;">All of our drivers are fellow students who are kind enough to sacrifice their time and gas to pick you up. Make sure to thank them!</h2>
+      <h3 class="regular big-top-margin" style="color: black;">I still have some questions. Who can I ask?</h3>
+      <h2 class="light padded-left" style="color: black;">If you have any questions, feel free to shoot us an email at ceclifecarpool@gmail.com and we'll try to help you out!</h2>
+    </div>
+    <div>
+      <button type="button" class="my-button centered button-margin big-button big-top-margin" id="new-puzzle">
+        <h4 class="light">Sounds good, I want a ride</h4>
+      </button>
+    </div>
+    <div>
+      <button type="button" class="my-button centered button-margin big-button" id="home">
+        <h4 class="light">Take me back</h4>
+      </button>
     </div>
   </div>
 </body>
 </html>
+
+<script>
+$("#new-puzzle").click(function() {
+  window.location.href = "form.html";
+});
+
+$("#home").click(function() {
+  window.location.href = "index.html";
+});
+</script>
