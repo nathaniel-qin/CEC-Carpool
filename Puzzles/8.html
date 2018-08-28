@@ -20,26 +20,37 @@
   <div id="background-img">
     <div class="container-fluid padded-big">
       <h1 class="regular centered">Welcome to the eighth puzzle!</h1>
-      <h2 class="regular centered">Think outside the box for this one.</h2>
+      <h2 class="regular centered">Good luck solving this one!</h2>
     </div>
     <div class="container-fluid padded-big puzzle">
-      <h3 class="bold black">I'm thinking of a number. What is it?</h3>
-      <h2 class="light indented black">Here are your clues:</h2>
-      <h2 class="light indented black">33.72590784848485 + 7.55181 - 12.502 / 3.3</h2>
-      <h2 class="light indented black">40.183(87.00269540451559 - 85.10528501 - 4.93174277388)</h2>
+      <h3 class="bold black">There are certain things you can take underground, and certain things you can't.</h3>
+      <h2 class="regular black">For example, you can take:</h2>
+      <h2 class="light black indented">- apples</h2>
+      <h2 class="light black indented">- quilts</h2>
+      <h2 class="light black indented">- gasoline</h2>
+      <h2 class="regular black">But you can't take:</h2>
+      <h2 class="light black indented">- avocados</h2>
+      <h2 class="light black indented">- curtains</h2>
+      <h2 class="light black indented">- baskets</h2>
+      <h3 class="regular black">Can you think of three more things you can take underground?
     </div>
     <div class="container-fluid padded-big">
-      <h2 class="bold centered">Enter your guess below:</h2><br>
-      <input type="text" name="guess" class="form-box centered" id="guess" autocomplete="off"><br>
+      <h2 class="bold centered">Enter your guesses below:</h2><br>
+      <input type="text" name="guess1" class="form-box centered" id="guess1" autocomplete="off"><br>
+      <input type="text" name="guess2" class="form-box centered" id="guess2" autocomplete="off"><br>
+      <input type="text" name="guess3" class="form-box centered" id="guess3" autocomplete="off"><br>
       <input type="button" class="my-button centered button-margin" onclick="getGuess()" value="Did you get it?" style="padding-bottom: 10px;">
     </div>
   </div>
+</body>
 </html>
 
 <script>
 function getGuess() {
-  var guess = document.getElementById("guess").value.toLowerCase();
-  checkAnswer8(guess);
+  var guess1 = document.getElementById("guess1").value.toLowerCase();
+  var guess2 = document.getElementById("guess2").value.toLowerCase();
+  var guess3 = document.getElementById("guess3").value.toLowerCase();
+  checkAnswer8([guess1, guess2, guess3]);
 };
 
 $("#guess").keyup(function(e) {

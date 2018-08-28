@@ -140,10 +140,22 @@ function checkAnswer7(guess) {
   }
 }
 
-function checkAnswer8(guess) {
+function checkAnswer8(x) {
+  var allowed = /[gjpqy]/;
+  if(!alertEmpty(x[0]) && !alertEmpty(x[1]) && !alertEmpty(x[2])) {
+    if(allowed.test(x[0]) && allowed.test(x[1]) && allowed.test(x[2])) {
+      toSuccess(8);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswerX(guess) {
   if(!alertEmpty(guess)) {
     if(guess === "76") {
-      toSuccess(8);
+      toSuccess(X);
     } else {
       alertWrong();
       return false;
