@@ -500,7 +500,7 @@ input[type="submit"] {
 }
 
 #car-gif {
-  height: 15em;
+  height: 10em;
   background: white url("Media/car.gif") no-repeat center;
   background-size: auto;
 }
