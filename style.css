@@ -293,6 +293,10 @@ input[type="submit"] {
   text-indent: 5%;
 }
 
+.black {
+  color: black;
+}
+
 .padded-left {
   padding-left: 5%;
 }
