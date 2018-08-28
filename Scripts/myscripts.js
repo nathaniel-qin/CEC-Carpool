@@ -143,8 +143,33 @@ function checkAnswer7(guess) {
 function checkAnswer8(x) {
   var allowed = /[gjpqy]/;
   if(!alertEmpty(x[0]) && !alertEmpty(x[1]) && !alertEmpty(x[2])) {
-    if(allowed.test(x[0]) && allowed.test(x[1]) && allowed.test(x[2])) {
+    if(!doubleCheck8(x)) {
+      return false;
+    } else if(allowed.test(x[0]) && allowed.test(x[1]) && allowed.test(x[2])) {
       toSuccess(8);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function doubleCheck8(x) {
+  if(x[0] === x[1] || x[0] === x[2] || x[1] === x[2]) {
+    alert("You have to bring 3 different things!");
+    return false;
+  } else if (/apple/i.test(x[0]) || /quilt/i.test(x[0]) || /gasoline/i.test(x[0]) || /apple/i.test(x[1]) || /quilt/i.test(x[1]) || /gasoline/i.test(x[1]) || /apple/i.test(x[2]) || /quilt/i.test(x[2]) || /gasoline/i.test(x[2])) {
+    alert("You can't use the things from my example!");
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function checkAnswer9(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "1 3 1 1 2 2 2 1") {
+      toSuccess(9);
     } else {
       alertWrong();
       return false;
