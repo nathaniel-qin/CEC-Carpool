@@ -168,7 +168,8 @@ function doubleCheck8(x) {
 
 function checkAnswer9(guess) {
   if(!alertEmpty(guess)) {
-    if(guess === "1 3 1 1 2 2 2 1") {
+    if(guess === "1 3 1 1 2 2 2 1" ||
+       guess === "13112221") {
       toSuccess(9);
     } else {
       alertWrong();
@@ -177,10 +178,122 @@ function checkAnswer9(guess) {
   }
 }
 
-function checkAnswerX(guess) {
+function checkAnswer10(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "24763") {
+      toSuccess(10);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswer11(guess) {
   if(!alertEmpty(guess)) {
     if(guess === "76") {
-      toSuccess(X);
+      toSuccess(11);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswer12(guess) {
+  if(!alertEmpty(guess)) {
+    if(doubleCheck12(guess)) {
+      toSuccess(12);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function doubleCheck12(guess) {
+  var x = [
+    'ada',
+    'ado',
+    'edo',
+    'nda'
+  ]
+  for(var i = 0; i < x.length; i++) {
+    if(guess.substring(3, 6) === x[i]) return true;
+  }
+  return false;
+}
+
+function checkAnswer13(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "1") {
+      toSuccess(13);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswer14(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "pickles are not really food") {
+      toSuccess(14);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswer15(blue, red) {
+  if(!alertEmpty(blue) && !alertEmpty(red)) {
+    if(blue === "5" && red === "3") {
+      toSuccess(15);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswer16(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "79") {
+      toSuccess(16);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswer17(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "34") {
+      toSuccess(17);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswer18(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "implicit") {
+      toSuccess(18);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswer19(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "1") {
+      toSuccess(19);
     } else {
       alertWrong();
       return false;
