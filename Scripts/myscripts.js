@@ -300,3 +300,28 @@ function checkAnswer19(guess) {
     }
   }
 }
+
+function checkAnswer20(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "it's not only pickles, i also do not like avocados" ||
+       guess === "its not only pickles, i also do not like avocados" ||
+       guess === "it's not only pickles i also do not like avocados" ||
+       guess === "its not only pickles i also do not like avocados") {
+         toSuccess(20);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswer21(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "peanuts") {
+      toSuccess(21);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
