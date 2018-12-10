@@ -30,8 +30,8 @@
     <div class="container-fluid padded-big form-div regular">
       <form autocomplete="off" id="ride_sign_up" name="ride_sign_up">
         <p class="bold">Do you need a ride this week?</p>
-        <label><input type="radio" name="Ride_for" value="friday" onclick="showNeedRideFriday()"><p> Yes, for Friday night (CEC Musical)</p></label><br>
-        <label><input type="radio" name="Ride_for" value="sunday" onclick="showNeedRideSunday()"><p> Yes, for Sunday service</p></label><br>
+        <label><input type="radio" name="Ride_for" value="friday" onclick="showNeedRideFriday()"><p> Yes, for Friday night (Chill Night)</p></label><br>
+        <label><input type="radio" name="Ride_for" value="sunday" onclick="showNeedRideSunday()"><p> Yes, for Sunday service (no Sunday school)</p></label><br>
         <label><input type="radio" name="Ride_for" value="both" onclick="showNeedRideBoth()"><p> Yes, for both</p></label><br>
         <label><input type="radio" name="Ride_for" value="none" onclick="hideNeedRide()"><p> No, just looking at the puzzle :)</p></label><br>
         <div id="need-ride" style="display: none;">
@@ -95,7 +95,7 @@
 <script>
 var $form = $("form#ride_sign_up"),
     url = "https://script.google.com/macros/s/AKfycbxcM2e3PVB5XuSj1RRuQMeSAFQOD1kBOdGpV2IlYS7BRD0abHo/exec",
-    nextUrl = "https://nathaniel-qin.github.io/CEC-Carpool/Puzzles/21.html";
+    nextUrl = "https://nathaniel-qin.github.io/CEC-Carpool/Puzzles/22.html";
 $("#submit-button").on("click", function(e) {
     e.preventDefault();
     var r = document.getElementsByName("Ride_for");

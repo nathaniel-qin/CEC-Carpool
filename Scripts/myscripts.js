@@ -325,3 +325,25 @@ function checkAnswer21(guess) {
     }
   }
 }
+
+function checkAnswer22(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "right in front of you" || guess === "right in front of you.") {
+      toSuccess(22);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswer23(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "31") {
+      toSuccess(23);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
