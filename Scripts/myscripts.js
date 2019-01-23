@@ -347,3 +347,14 @@ function checkAnswer23(guess) {
     }
   }
 }
+
+function checkAnswer24(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "starfield") {
+      toSuccess(24);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
