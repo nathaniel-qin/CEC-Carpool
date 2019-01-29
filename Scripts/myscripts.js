@@ -358,3 +358,37 @@ function checkAnswer24(guess) {
     }
   }
 }
+
+function checkAnswer25(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "meat") {
+      toSuccess(25);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswer26(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === "silence") {
+      toSuccess(26);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswer27(guess) {
+  console.log('yeet');
+  if(!alertEmpty(guess)) {
+    if(/i'll have ham and eggs/i.test(guess) || /ill have ham and eggs/i.test(guess)) {
+      toSuccess(27);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
