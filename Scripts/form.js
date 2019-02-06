@@ -109,7 +109,7 @@ function showSundaySug() {
   $('#sunday-sug').slideDown();
 
   var radios = document.getElementsByName('Sunday');
-  if(radios[2].checked) {
+  if(radios[3].checked) {
     $('#sun-alert').show();
   } else {
     $('#sun-alert').hide();

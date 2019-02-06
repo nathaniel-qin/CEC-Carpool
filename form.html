@@ -60,6 +60,7 @@
           <div id="sunday" style="display: none;">
             <p>Sunday:</p>
             <label><input type="radio" name="Sunday" value="home" onclick="hideSundaySug()"><p> Home</p></label><br>
+            <label><input type="radio" name="Sunday" value="emt" onclick="hideSundaySug()"><p> EMT Luncheon</p></label><br>
             <label><input type="radio" name="Sunday" value="out" onclick="showSundaySug()"><p> Out</p></label><br>
             <label><input type="radio" name="Sunday" value="undecided" onclick="showSundaySug()"><p> Undecided</p></label><br>
             <span class="my-alert" id="sun-alert">Please avoid selecting this option if possible :)<br></span>
@@ -136,7 +137,7 @@ $("#submit-button").on("click", function(e) {
     }
     if (r[1].checked || r[2].checked) {
         var i = document.getElementsByName("Sunday");
-        if (!i[0].checked && !i[1].checked && !i[2].checked) return alert("Please select where you're going afterwards on Sunday."), !1
+        if (!i[0].checked && !i[1].checked && !i[2].checked && !i[3].checked) return alert("Please select where you're going afterwards on Sunday."), !1
     }
     var c = document.getElementsByName("Is_New");
     if (c[0].checked || c[2].checked) {
