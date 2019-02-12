@@ -382,7 +382,6 @@ function checkAnswer26(guess) {
 }
 
 function checkAnswer27(guess) {
-  console.log('yeet');
   if(!alertEmpty(guess)) {
     if(/i'll have ham and eggs/i.test(guess) || /ill have ham and eggs/i.test(guess)) {
       toSuccess(27);

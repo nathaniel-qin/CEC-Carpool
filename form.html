@@ -30,7 +30,7 @@
     <div class="container-fluid padded-big form-div regular">
       <form autocomplete="off" id="ride_sign_up" name="ride_sign_up">
         <p class="bold">Do you need a ride this week?</p>
-        <label><input type="radio" name="Ride_for" value="friday" onclick="showNeedRideFriday()"><p> Yes, for Friday night (Gospel Night)</p></label><br>
+        <label><input type="radio" name="Ride_for" value="friday" onclick="showNeedRideFriday()"><p> Yes, for Friday night</p></label><br>
         <label><input type="radio" name="Ride_for" value="sunday" onclick="showNeedRideSunday()"><p> Yes, for Sunday school & service</p></label><br>
         <label><input type="radio" name="Ride_for" value="both" onclick="showNeedRideBoth()"><p> Yes, for both</p></label><br>
         <label><input type="radio" name="Ride_for" value="none" onclick="hideNeedRide()"><p> No, just looking at the puzzle :)</p></label><br>
@@ -47,7 +47,7 @@
             <label><input type="radio" name="Friday" value="home" onclick="hideFridaySug()"><p> Home</p></label><br>
             <label><input type="radio" name="Friday" value="out" onclick="showFridaySug()"><p> Out</p></label><br>
             <label><input type="radio" name="Friday" value="undecided" onclick="showFridaySug()"><p> Undecided</p></label><br>
-            <span class="my-alert" id="fri-alert">Please avoid selecting this option if possible :)<br></span>
+            <span class="my-alert" id="fri-alert">Please try to be a little more decisive :(<br></span>
             <div id="friday-sug" style="display: none;">
               <br>
               <p>Any suggestions for where to go?</p>
@@ -60,10 +60,9 @@
           <div id="sunday" style="display: none;">
             <p>Sunday:</p>
             <label><input type="radio" name="Sunday" value="home" onclick="hideSundaySug()"><p> Home</p></label><br>
-            <label><input type="radio" name="Sunday" value="emt" onclick="hideSundaySug()"><p> EMT Luncheon</p></label><br>
             <label><input type="radio" name="Sunday" value="out" onclick="showSundaySug()"><p> Out</p></label><br>
             <label><input type="radio" name="Sunday" value="undecided" onclick="showSundaySug()"><p> Undecided</p></label><br>
-            <span class="my-alert" id="sun-alert">Please avoid selecting this option if possible :)<br></span>
+            <span class="my-alert" id="sun-alert">Please try to be a little more decisive :(<br></span>
             <div id="sunday-sug" style="display: none;">
               <br>
               <p>Any suggestions for where to go?</p>
@@ -96,7 +95,7 @@
 <script>
 var $form = $("form#ride_sign_up"),
     url = "https://script.google.com/macros/s/AKfycbxcM2e3PVB5XuSj1RRuQMeSAFQOD1kBOdGpV2IlYS7BRD0abHo/exec",
-    nextUrl = "https://nathaniel-qin.github.io/CEC-Carpool/Puzzles/26.html";
+    nextUrl = "https://nathaniel-qin.github.io/CEC-Carpool/Puzzles/27.html";
 $("#submit-button").on("click", function(e) {
     e.preventDefault();
     var r = document.getElementsByName("Ride_for");
@@ -137,7 +136,7 @@ $("#submit-button").on("click", function(e) {
     }
     if (r[1].checked || r[2].checked) {
         var i = document.getElementsByName("Sunday");
-        if (!i[0].checked && !i[1].checked && !i[2].checked && !i[3].checked) return alert("Please select where you're going afterwards on Sunday."), !1
+        if (!i[0].checked && !i[1].checked && !i[2].checked) return alert("Please select where you're going afterwards on Sunday."), !1
     }
     var c = document.getElementsByName("Is_New");
     if (c[0].checked || c[2].checked) {

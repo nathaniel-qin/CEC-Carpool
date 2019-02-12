@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Carpool - Puzzle #27</title>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="../Scripts/myscripts.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Heebo:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="icon" href="../Media/icon.png">
+</head>
+<body>
+  <div class="container centered" onclick="window.location.href='../index.html';" id="header-img"></div>
+  <div id="background-img">
+    <div class="container-fluid padded-big">
+      <h1 class="regular centered">Welcome to the 27th puzzle!</h1>
+      <h2 class="regular centered">Can you decipher the hidden meaning?</h2>
+    </div>
+    <div class="container-fluid padded-big puzzle">
+      <h3 class="bold black">What does the man say?</h3>
+      <h2 class="light indented black">A man is eating at a diner. He mulls over the menu for quite a long time, then calls the waitress over to order.</h2>
+      <h2 class="light indented black">Man: "Excuse me, how much does the sausage and biscuit special cost?"</h2>
+      <h2 class="light indented black">Waitress: "Oh, sorry, sir. Your menu is slightly outdated- that special has been discontinued."</h2>
+      <h2 class="light indented black">Man: "Oh, okay. In that case..."</h2>
+      <h2 class="light indented black">Waitress: "Are you ready to order?"</h2>
+      <h2 class="regular indented black">Man: "L F M N X."</h2>
+      <h3 class="bold centered black">What did he say?</h3>Ç
+    </div>
+    <div class="container-fluid padded-big">
+      <h2 class="bold centered">Enter your guess below:</h2><br>
+      <input type="text" name="guess" class="form-box centered" id="guess" autocomplete="off"><br>
+      <input type="button" class="my-button centered button-margin" onclick="getGuess()" value="Did you get it?" style="padding-bottom: 10px;">
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+function getGuess() {
+  var guess = document.getElementById("guess").value.toLowerCase();
+  checkAnswer27(guess);
+};
+
+$("#guess").keyup(function(e) {
+  if(e.keyCode === 13) {
+    getGuess();
+  }
+});
+</script>

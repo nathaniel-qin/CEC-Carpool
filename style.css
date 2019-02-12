@@ -16,7 +16,7 @@ h1 {
 
 @media screen and (min-width: 992px) {
   h1 {
-    font-size: 4vw;
+    font-size: 3vw;
   }
 }
 
@@ -38,7 +38,7 @@ h2 {
 
 @media screen and (min-width: 992px) {
   h2 {
-    font-size: 2.5vw;
+    font-size: 2vw;
   }
 }
 
@@ -60,7 +60,7 @@ h3 {
 
 @media screen and (min-width: 992px) {
   h3 {
-    font-size: 3vw;
+    font-size: 2vw;
   }
 }
 
@@ -82,7 +82,7 @@ h4 {
 
 @media screen and (min-width: 992px) {
   h4 {
-    font-size: 1.75vw;
+    font-size: 1.5vw;
   }
 }
 
@@ -140,20 +140,20 @@ form {
 
 @media screen and (min-width: 992px) {
   form {
-    font-size: 1.5vw;
+    font-size: 1.25vw;
   }
 
   form p {
-    font-size: 3vw;
+    font-size: 2.25vw;
     line-height: 3.5vw;
   }
 
   label p {
-    font-size: 1.5vw !important;
+    font-size: 1.25vw !important;
   }
 
   input[type="text"] {
-    font-size: 1.25vw;
+    font-size: 1vw;
   }
 }
 
@@ -199,7 +199,7 @@ input[type="submit"] {
 }
 
 .padded-big {
-  padding: 5%;
+  padding: 4%;
 }
 
 .padded-small {
@@ -209,7 +209,7 @@ input[type="submit"] {
 .my-alert {
   font-family: 'Heebo', sans-serif;
   font-weight: 300;
-  color: red;
+  color: crimson;
   display: none;
 }
 
@@ -354,7 +354,7 @@ input[type="submit"] {
 
 @media screen and (min-width: 992px) {
   .form-box {
-    font-size: 2vw;
+    font-size: 1.75vw;
   }
 }
 
