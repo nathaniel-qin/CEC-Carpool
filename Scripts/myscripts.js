@@ -391,3 +391,25 @@ function checkAnswer27(guess) {
     }
   }
 }
+
+function checkAnswer28(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === 'fmamj') {
+      toSuccess(28);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswer29(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess.charAt(0) === 'e' && guess.charAt(guess.length - 1) === 'e') {
+      toSuccess(29);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
