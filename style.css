@@ -533,7 +533,7 @@ input[type="submit"] {
   padding-top: 5%;
 }
 
-#hint-button {
+input[id^=hint-button] {
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;

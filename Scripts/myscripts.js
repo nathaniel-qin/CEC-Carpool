@@ -49,9 +49,14 @@ function alertWrong() {
   }
 }
 
-function showHint() {
-  $('#hint').slideDown(300);
-  $('#hint-button').slideUp(300);
+function showHint(num) {
+  if(num) {
+    $('#hint' + num).slideDown(300);
+    $('#hint-button' + num).slideUp(300);
+  } else {
+    $('#hint').slideDown(300);
+    $('#hint-button').slideUp(300);
+  }
 }
 
 function checkAnswer1(guess) {
@@ -407,6 +412,17 @@ function checkAnswer29(guess) {
   if(!alertEmpty(guess)) {
     if(guess.charAt(0) === 'e' && guess.charAt(guess.length - 1) === 'e') {
       toSuccess(29);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function checkAnswer30(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === 'carpool') {
+      toSuccess(30);
     } else {
       alertWrong();
       return false;
