@@ -429,3 +429,14 @@ function checkAnswer30(guess) {
     }
   }
 }
+
+function checkAnswer31(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === '17') {
+      toSuccess(31);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
