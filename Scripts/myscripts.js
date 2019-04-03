@@ -440,3 +440,14 @@ function checkAnswer31(guess) {
     }
   }
 }
+
+function checkAnswer32(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === 'were all in this together' || guess === 'we\'re all in this together') {
+      toSuccess(32);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
