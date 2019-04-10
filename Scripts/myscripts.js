@@ -451,3 +451,14 @@ function checkAnswer32(guess) {
     }
   }
 }
+
+function checkAnswer33(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === 'easter') {
+      toSuccess(33);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
