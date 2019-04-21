@@ -462,3 +462,14 @@ function checkAnswer33(guess) {
     }
   }
 }
+
+function checkAnswer34(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess.length > 1 && guess.charAt(0) === 't' && guess.charAt(1) === 'e') {
+      toSuccess(34);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
