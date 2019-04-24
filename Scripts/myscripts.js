@@ -473,3 +473,14 @@ function checkAnswer34(guess) {
     }
   }
 }
+
+function checkAnswer35(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === 'good luck freshmen!') {
+      toSuccess(35);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}

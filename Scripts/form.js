@@ -102,18 +102,10 @@ function showFridaySug() {
 
 function hideSundaySug() {
   $('#sunday-sug').slideUp();
-  $('#sun-alert').hide();
 }
 
 function showSundaySug() {
   $('#sunday-sug').slideDown();
-
-  var radios = document.getElementsByName('Sunday');
-  if(radios[2].checked) {
-    $('#sun-alert').show();
-  } else {
-    $('#sun-alert').hide();
-  }
 }
 
 function hideInfo() {
