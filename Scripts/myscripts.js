@@ -484,3 +484,14 @@ function checkAnswer35(guess) {
     }
   }
 }
+
+function checkAnswer36(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === 'we will miss you') {
+      toSuccess(36);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}

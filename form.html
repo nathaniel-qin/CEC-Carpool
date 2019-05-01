@@ -9,7 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  <script src="Scripts/formscripts.min.js"></script>
+  <script src="Scripts/form.js"></script>
   <script src="Scripts/serializeObject.min.js"></script>
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
@@ -30,7 +30,7 @@
     <div class="container-fluid padded-big form-div regular">
       <form autocomplete="off" id="ride_sign_up" name="ride_sign_up">
         <p class="bold">Do you need a ride this week?</p>
-        <label><input type="radio" name="Ride_for" value="friday" onclick="showNeedRideFriday()"><p> Yes, for Friday night (Frosh Night!)</p></label><br>
+        <label><input type="radio" name="Ride_for" value="friday" onclick="showNeedRideFriday()"><p> Yes, for Friday night</p></label><br>
         <label><input type="radio" name="Ride_for" value="sunday" onclick="showNeedRideSunday()"><p> Yes, for Sunday school & service</p></label><br>
         <label><input type="radio" name="Ride_for" value="both" onclick="showNeedRideBoth()"><p> Yes, for both</p></label><br>
         <label><input type="radio" name="Ride_for" value="none" onclick="hideNeedRide()"><p> No, just looking at the puzzle :)</p></label><br>
@@ -61,6 +61,8 @@
             <p>Sunday:</p>
             <label><input type="radio" name="Sunday" value="home" onclick="hideSundaySug()"><p> Home</p></label><br>
             <label><input type="radio" name="Sunday" value="out" onclick="showSundaySug()"><p> Out</p></label><br>
+            <label><input type="radio" name="Sunday" value="undecided" onclick="showSundaySug()"><p> Undecided</p></label><br>
+            <span class="my-alert" id="sun-alert">Please try to be a little more decisive :(<br></span>
             <div id="sunday-sug" style="display: none;">
               <br>
               <p>Any suggestions for where to go?</p>
@@ -93,7 +95,7 @@
 <script>
 var $form = $("form#ride_sign_up"),
     url = "https://script.google.com/macros/s/AKfycbxcM2e3PVB5XuSj1RRuQMeSAFQOD1kBOdGpV2IlYS7BRD0abHo/exec",
-    nextUrl = "https://nathaniel-qin.github.io/CEC-Carpool/Puzzles/32.html";
+    nextUrl = "https://nathaniel-qin.github.io/CEC-Carpool/Puzzles/36.html";
 $("#submit-button").on("click", function(e) {
     e.preventDefault();
     var r = document.getElementsByName("Ride_for");
@@ -134,7 +136,7 @@ $("#submit-button").on("click", function(e) {
     }
     if (r[1].checked || r[2].checked) {
         var i = document.getElementsByName("Sunday");
-        if (!i[0].checked && !i[1].checked) return alert("Please select where you're going afterwards on Sunday."), !1
+        if (!i[0].checked && !i[1].checked && !i[2].checked) return alert("Please select where you're going afterwards on Sunday."), !1
     }
     var c = document.getElementsByName("Is_New");
     if (c[0].checked || c[2].checked) {
