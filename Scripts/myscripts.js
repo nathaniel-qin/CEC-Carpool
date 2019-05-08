@@ -495,3 +495,30 @@ function checkAnswer36(guess) {
     }
   }
 }
+
+function checkAnswer37(guess) {
+  if(!alertEmpty(guess)) {
+    if(isOk37(guess)) {
+      toSuccess(37);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
+
+function isOk37(guess) {
+  if(guess.charAt(0) === 'b' && guess.charAt(guess.length - 1) === 'p') return true;
+  else if(guess.charAt(0) === 'p' && guess.charAt(guess.length - 1) === 'b') return true;
+  else if(guess.charAt(0) === 'c' && guess.charAt(guess.length - 1) === 'g') return true;
+  else if(guess.charAt(0) === 'g' && guess.charAt(guess.length - 1) === 'c') return true;
+  else if(guess.charAt(0) === 'k' && guess.charAt(guess.length - 1) === 'g') return true;
+  else if(guess.charAt(0) === 'g' && guess.charAt(guess.length - 1) === 'k') return true;
+  else if(guess.charAt(0) === 'd' && guess.charAt(guess.length - 1) === 't') return true;
+  else if(guess.charAt(0) === 't' && guess.charAt(guess.length - 1) === 'd') return true;
+  else if(guess.charAt(0) === 'f' && guess.charAt(guess.length - 1) === 'v') return true;
+  else if(guess.charAt(0) === 'v' && guess.charAt(guess.length - 1) === 'f') return true;
+  else if(guess.charAt(0) === 's' && guess.charAt(guess.length - 1) === 'z') return true;
+  else if(guess.charAt(0) === 'z' && guess.charAt(guess.length - 1) === 's') return true;
+  else return false;
+}
