@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-  <title>Carpool - Puzzle #37</title>
+  <title>Carpool - Puzzle #38</title>
   <meta charset="utf-8">
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,21 +11,28 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="../Scripts/myscripts.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Heebo:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,600" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../style.css">
   <link rel="icon" href="../Media/icon.png">
+  <style>
+    .indented { font-family: 'Poppins', sans-serif; font-weight: 300; }
+    .indented b { font-weight: 600; }
+  </style>
 </head>
 <body>
   <div class="container centered" onclick="window.location.href='../index.html';" id="header-img"></div>
   <div id="background-img">
     <div class="container-fluid padded-big">
-      <h1 class="regular centered">Welcome to the 37th puzzle!</h1>
-      <h2 class="regular centered">I can't believe it's already at 37...</h2>
+      <h1 class="regular centered">Welcome to the 38th puzzle!</h1>
+      <h2 class="regular centered">I can only think of word puzzles.</h2>
     </div>
     <div class="container-fluid padded-big puzzle">
-      <h3 class="bold black">What other word could belong in this group?</h3><br>
-      <h2 class="light indented black">Toward</h2>
-      <h2 class="light indented black">Blimp</h2>
-      <h2 class="light indented black">Gimmick</h2>
+      <h3 class="bold black">Can you solve this riddle?</h3><br>
+      <h2 class="light indented black">Open you are b<b>uy</b>,</h2>
+      <h2 class="light indented black">Closed you are b<b>ag</b>.</h2>
+      <hr>
+      <h2 class="light indented black">Open you are <b>you</b>,</h2>
+      <h2 class="light indented black">What are you closed?</h2>
     </div>
     <div class="container-fluid padded-big">
       <h2 class="bold centered">Enter your guess below:</h2><br>
@@ -39,7 +46,7 @@
 <script>
 function getGuess() {
   var guess = document.getElementById("guess").value.toLowerCase();
-  checkAnswer37(guess);
+  checkAnswer38(guess);
 };
 
 $("#guess").keyup(function(e) {

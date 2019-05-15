@@ -522,3 +522,14 @@ function isOk37(guess) {
   else if(guess.charAt(0) === 'z' && guess.charAt(guess.length - 1) === 's') return true;
   else return false;
 }
+
+function checkAnswer38(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === 'gca') {
+      toSuccess(38);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
