@@ -525,7 +525,7 @@ function isOk37(guess) {
 
 function checkAnswer38(guess) {
   if(!alertEmpty(guess)) {
-    if(guess === 'gca') {
+    if(guess === 'hch') {
       toSuccess(38);
     } else {
       alertWrong();
