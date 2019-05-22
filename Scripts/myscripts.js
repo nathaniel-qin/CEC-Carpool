@@ -533,3 +533,14 @@ function checkAnswer38(guess) {
     }
   }
 }
+
+function checkAnswer39(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === '15') {
+      toSuccess(39);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
