@@ -544,3 +544,17 @@ function checkAnswer39(guess) {
     }
   }
 }
+
+function checkAnswer40(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === '2025bc' || guess === '2025 bc') {
+      toSuccess(40);
+    } else if(guess === '2025') {
+      alert('Be more specific!');
+      return false;
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
