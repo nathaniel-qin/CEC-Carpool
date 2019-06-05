@@ -558,3 +558,14 @@ function checkAnswer40(guess) {
     }
   }
 }
+
+function checkAnswer41(guess) {
+  if(!alertEmpty(guess)) {
+    if(guess === 'thanks for a great year') {
+      toSuccess(41);
+    } else {
+      alertWrong();
+      return false;
+    }
+  }
+}
