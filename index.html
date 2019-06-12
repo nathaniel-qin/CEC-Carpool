@@ -20,6 +20,12 @@
 <body>
   <div class="container centered" onclick="window.location.href='index.html';" id="header-img"></div>
   <div id="background-img">
+    <div class="notice-modal-mask">
+      <div class="notice-modal-box">
+        <p>Since my role as carpool coordinator has come to an end, this web application too no longer functions as a way for you to request rides. You are still free to browse the previous puzzles, though, if you want!</p>
+        <button type="button" class="my-button centered big-button" id="modal-button">Got it!</button>
+      </div>
+    </div>
     <div class="container-fluid padded-big">
       <h1 class="bold centered">Welcome to LIFE Fellowship!</h1>
       <h2 class="light centered">This handy dandy website helps me get you to church.</h2>
@@ -45,6 +51,12 @@
       </button>
     </div>
   </div>
+  <script>
+    $('#modal-button').on('click', () => {
+      $('.notice-modal-mask').first().css('display', 'none');
+      $('body').css('overflow', 'auto');
+    });
+  </script>
 </body>
 </html>
 

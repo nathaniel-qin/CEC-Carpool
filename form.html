@@ -95,9 +95,12 @@
 <script>
 var $form = $("form#ride_sign_up"),
     url = "https://script.google.com/macros/s/AKfycbxcM2e3PVB5XuSj1RRuQMeSAFQOD1kBOdGpV2IlYS7BRD0abHo/exec",
-    nextUrl = "https://nathaniel-qin.github.io/CEC-Carpool/Puzzles/41.html";
+    nextUrl = "https://nathaniel-qin.github.io/CEC-Carpool/";
 $("#submit-button").on("click", function(e) {
     e.preventDefault();
+    alert("You can't request rides using this anymore! Sorry :(")
+    window.location.href = nextUrl;
+    /*e.preventDefault();
     var r = document.getElementsByName("Ride_for");
     if (r[3].checked) return setTimeout(function() {
         window.location.href = nextUrl
@@ -151,6 +154,6 @@ $("#submit-button").on("click", function(e) {
         data: $form.serializeObject(),
         success: nextPage,
         error: alertError
-    })
+    })*/
 });
 </script>
