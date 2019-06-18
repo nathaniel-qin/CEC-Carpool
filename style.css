@@ -157,10 +157,6 @@ form {
   }
 }
 
-body {
-  overflow: hidden;
-}
-
 .notice-modal-mask {
   display: none;
   position: absolute;
