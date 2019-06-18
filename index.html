@@ -52,10 +52,20 @@
     </div>
   </div>
   <script>
-    $('#modal-button').on('click', () => {
-      $('.notice-modal-mask').first().css('display', 'none');
-      $('body').css('overflow', 'auto');
+    $(document).ready(() => {
+
+      if(localStorage.getItem('modal-viewed') !== 'true') {
+        $('.notice-modal-mask').first().css('display', 'block');
+      }
+
+      $('#modal-button').on('click', () => {
+        $('.notice-modal-mask').first().css('display', 'none');
+        $('body').css('overflow', 'auto');
+        localStorage.setItem('modal-viewed', 'true');
+      });
+
     });
+
   </script>
 </body>
 </html>
